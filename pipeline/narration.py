@@ -6,8 +6,8 @@ Guards learned the hard way (FAILURES.md F3, F4):
 - audio far longer than the text can need is rejected and retried;
 - each free-tier TTS model has its own daily quota, so when one is exhausted (HTTP 429)
   or keeps producing implausible audio, the next model in `fallback_models` is used.
-  User test 1 heard the voice change where the model changed, so fallback_models is now
-  empty: the stage stops rather than mixing voices;
+  User test 1 heard the voice change where the model changed (3.1 -> 2.5), so the fallback
+  is now only a sibling of the primary model (2.5 flash -> 2.5 pro), to keep the voice close;
 - leading and trailing silence is trimmed so the edit is cut to the voice."""
 from __future__ import annotations
 

@@ -9,11 +9,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shutil
 import sys
 import time
 import zipfile
 from pathlib import Path
+
+# Kaggle sets MPLBACKEND to its inline backend, which ACE-Step's own venv does not have (FAILURES F8)
+os.environ["MPLBACKEND"] = "Agg"
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))

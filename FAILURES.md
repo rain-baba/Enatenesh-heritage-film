@@ -95,3 +95,25 @@ What broke, what I tried, what fixed it. Evidence is in `runs.jsonl` (`status` =
   named; s08 says "only two people in the room". Only those three keyframes regenerate
   (3 Cloudflare calls); the other eight stay cached.
 - **Lesson:** consistency work has to cover the extras, not only the main characters.
+
+## F8. Environment problems: FFmpeg not on PATH, Kaggle's matplotlib backend (14:30)
+
+- **FFmpeg:** a fresh PowerShell could not find `ffprobe` although `winget list` showed FFmpeg 9.1
+  installed. The winget package had not added its folder to the user PATH. Fixed by locating
+  `ffprobe.exe` under `%LOCALAPPDATA%\Microsoft\WinGet` and appending its folder to the user PATH.
+  (The agent's terminal had worked earlier, which hid the problem.)
+- **Kaggle + ACE-Step:** importing ACE-Step failed with `ValueError: Key backend:
+  'module://matplotlib_inline.backend_inline' is not a valid value`. Kaggle sets `MPLBACKEND` for
+  its notebook, but ACE-Step runs in its own uv virtualenv without that backend. Fixed by setting
+  `MPLBACKEND=Agg` (now inside `kaggle/ace_step.py`, so a clean clone works).
+
+## F9. Second TTS model's daily quota ran out mid-regeneration (14:41)
+
+- **What happened:** regenerating all lines on `gemini-2.5-flash-preview-tts` (to fix the voice
+  change heard in user test 1) got through s01 to s06, then hit the daily quota at s07. Two
+  calls also returned no audio (`finishReason: OTHER`); the retries handled those.
+- **Fix:** add `gemini-2.5-pro-preview-tts`, the sibling of the primary model, as the only
+  fallback, so s07 to s10 come from the same model family and the same voice (Sulafat).
+  s11 was already on 2.5 flash and is reused from cache.
+- **Lesson:** on free tiers, budget the quota before a full regeneration: 11 lines plus
+  retries is close to a whole day's allowance for one TTS model.
