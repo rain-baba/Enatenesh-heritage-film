@@ -26,9 +26,13 @@
       "model": "gemini-3.8-flash"
     },
     "tts": {
-      "model": "gemini-3.8-flash-tts",
+      "model": "gemini-3.1-flash-tts-preview",
+      "fallback_models": [
+        "gemini-2.5-flash-preview-tts",
+        "gemini-3.8-flash-lite-tts"
+      ],
       "voice": "Sulafat",
-      "style_instruction": "Say warmly and naturally, like a daughter remembering her father, in Amharic"
+      "style_instruction": "Say warmly and gently in Amharic"
     },
     "image": {
       "model": "@cf/black-forest-labs/flux-2-klein-4b",

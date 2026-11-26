@@ -36,3 +36,20 @@ What broke, what I tried, what fixed it. Evidence is in `runs.jsonl` (`status` =
   3. Leading and trailing silence is trimmed from every line so shots are cut to the voice.
 - **Lesson:** a TTS model has no separate channel for instructions; anything in the prompt can be
   spoken. Measure output duration against text length on every call, not once.
+
+## F4. Daily TTS quota exhausted, and 3.8 still spoke the short prefix (12:16)
+
+- **What happened:** rerunning the radio cut, `gemini-3.8-flash-tts` returned HTTP 429
+  "You exceeded your current quota". Radio cut v1 (11 lines) plus retries had used up the free
+  daily allowance for that model. Before the 429, s01 came back at 12.7 s and 12.2 s for 49
+  characters: the duration guard from F3 caught that 3.8 was still speaking part of the
+  `Say ...:` prefix. The first attempt also failed DNS resolution inside the agent sandbox (F2 again).
+- **Tried:** waiting is not an option on the day of the deadline.
+- **Fix:** free-tier quotas are per model, so the storyboard now lists a primary TTS model and
+  fallbacks: `gemini-3.1-flash-tts-preview` (it spoke the smoke-test prefix correctly),
+  then `gemini-2.5-flash-preview-tts`, then `gemini-3.8-flash-lite-tts`. A daily-quota 429 or three
+  implausible results in a row marks a model unusable for the rest of the run and moves to the
+  next one; a per-minute 429 backs off 10, 20, 40 s first. Every switch is logged. Tested with a
+  mocked API before running for real.
+- **Lesson:** the binding constraint on the free tier is requests per model per day, not money.
+  Rejected and retried calls spend the same quota as good ones.

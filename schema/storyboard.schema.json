@@ -124,6 +124,13 @@
             },
             "style_instruction": {
               "type": "string"
+            },
+            "fallback_models": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Tried in order when a model's quota is exhausted or it keeps failing"
             }
           }
         },
