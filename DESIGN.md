@@ -37,6 +37,8 @@ on the way to school, the coffee gathering, and the phone detail. Shot count and
 - **One motif:** her on his shoulders. It opens (s01) and closes (s11) the film.
 - **Cut to the voice:** each shot lasts as long as its narration line plus padding, so the
   radio cut fixes the timing before any picture exists.
+- **s08 (Chegura, talking like friends) and s11 (Enatenesh) keep their full narration.** They are
+  the heart of the story. If the film runs over 90 s, cut pauses and other lines first.
 - **Every shot has a stated reason** in `storyboard.json` (`reason` field).
 
 ## User test 1: radio cut
