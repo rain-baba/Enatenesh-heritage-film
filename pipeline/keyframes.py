@@ -10,13 +10,15 @@ from __future__ import annotations
 
 import base64
 import io
+import json
+import shutil
 import time
 from pathlib import Path
 
 import requests
 from PIL import Image
 
-from .common import (OUT, Retryable, check_http, ensure_dirs, file_sha, input_hash, is_fresh,
+from .common import (OUT, STORYBOARD, Retryable, check_http, ensure_dirs, file_sha, input_hash, is_fresh,
                      load_env, load_storyboard, log_call, mark_fresh, need, with_retries)
 
 URL = "https://api.cloudflare.com/client/v4/accounts/{acct}/ai/run/{model}"
@@ -175,6 +177,28 @@ def candidates(shot_ids: set[str]) -> None:
             seed = shot["seed"] + i * 7
             _one("candidate", shot["id"], prompt, seed, shot_cfg(cfg, shot), refs,
                  CANDS / f"{shot['id']}_seed{seed}.png")
+
+
+def pick(sid: str, seed: int) -> None:
+    """Promote outputs/candidates/<sid>_seed<seed>.png to the shot's keyframe, byte for byte.
+    Refuses if the candidate was made from a different prompt, model or references than the
+    storyboard now says, and records the chosen seed in storyboard.json."""
+    sb = load_storyboard()
+    shot = next(s for s in sb["shots"] if s["id"] == sid)
+    cfg = shot_cfg(sb["models"]["image"], shot)
+    ref_ids = shot["characters"] if cfg.get("use_references", True) else []
+    refs = [REFS / f"{cid}.png" for cid in ref_ids]
+    h = input_hash(build_prompt(sb, shot, ref_ids), seed, cfg, [file_sha(p) for p in refs])
+    src = CANDS / f"{sid}_seed{seed}.png"
+    if not is_fresh(src, h):
+        raise SystemExit(f"{src.name} was not made from the current storyboard prompt for {sid}; "
+                         "regenerate candidates first.")
+    raw = json.loads(STORYBOARD.read_text(encoding="utf-8"))
+    next(s for s in raw["shots"] if s["id"] == sid)["seed"] = seed
+    STORYBOARD.write_text(json.dumps(raw, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    shutil.copyfile(src, KEYS / f"{sid}.png")
+    mark_fresh(KEYS / f"{sid}.png", h)
+    print(f"  {sid}: keyframe = {src.name}")
 
 
 if __name__ == "__main__":

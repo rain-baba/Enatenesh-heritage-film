@@ -5,6 +5,7 @@
     python -m pipeline.run <stage> [shot ids]   # validate | narration | keyframes | shots | music
     python -m pipeline.run import <zip>         # bring in Kaggle outputs (Wan clips, ACE-Step)
     python -m pipeline.run candidates s03 s08   # 3 keyframe options per shot to choose from
+    python -m pipeline.run pick s03 117         # make candidate s03_seed117 the keyframe
 
 Every stage reads storyboard.json and skips work whose inputs have not changed,
 so after editing one shot only that shot's model calls run again."""
@@ -48,6 +49,8 @@ def main(argv: list[str]) -> None:
         print("assemble"); assemble.run("film")
     elif cmd in {"narration", "keyframes", "shots"}:
         {"narration": narration, "keyframes": keyframes, "shots": shots}[cmd].run(rest or None)
+    elif cmd == "pick":
+        keyframes.pick(argv[1], int(argv[2]))
     elif cmd == "candidates":
         keyframes.candidates(rest)
     elif cmd == "music":

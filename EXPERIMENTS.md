@@ -98,4 +98,9 @@ Each entry: hypothesis, change, result. Logged calls are in `runs.jsonl`.
   a habesha kemis pouring from the jebena in the background, popcorn and incense; in the fall,
   her kneeling by his head so his whole body is visible). Style block unchanged so the look
   stays consistent; I rejected switching these two shots to "realistic photograph".
-- **Result:** pending (3 candidates each). Time-boxed: this is the last round before moving on.
+- **Result:** s03: the 9B model's seed 117 shows his whole body lying naturally with the girl
+  at his head, which the 4B model never managed in two rounds. Chosen. s08: on a second look I
+  preferred round 2's electric-lamp version (seed 115) after all, since it matches my city
+  childhood. Chosen candidates are promoted byte for byte with `pipeline.run pick`, which
+  checks the candidate's hash against the current prompt so the storyboard cannot drift from
+  the image. s10: pending.
