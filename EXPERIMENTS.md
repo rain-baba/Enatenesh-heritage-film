@@ -124,3 +124,17 @@ Each entry: hypothesis, change, result. Logged calls are in `runs.jsonl`.
   the rest of the frame; in 9:16 the subtitles now sit in the band below the picture, which
   also makes them easier to read. Music raised from -26 to -21 LUFS before ducking; at -26 it
   was only audible with the volume turned up.
+
+## E11. Wan 2.2 image-to-video vs Ken Burns, judged in the cut
+
+- **Hypothesis:** real motion from Wan 2.2 TI2V-5B makes the four key shots (s01 shoulders, s04
+  eyes opening, s06 combing hair, s11 graduation) feel more alive than a pan over the still.
+- **Change:** 512x512, 81 frames (3.4 s at 24 fps), 25 steps, guidance 5, fp16, on a Kaggle T4;
+  each clip fitted to its shot by trimming 0.25 s, stretching up to 1.3x and holding the last frame.
+- **Result:** it ran (8.7 min per clip, see FAILURES F11), but watching the cut, faces warped
+  between frames and the stretched, upscaled 512 px clips looked smeared and jerky next to the
+  crisp keyframes. Identity drift on the father's face is the exact thing the reference images
+  were built to prevent. **Decision:** all four back to Ken Burns for the final film; the clips
+  stay in `outputs/shots/wan/` as evidence. To make Wan worth it: 720p, 121 frames and 40+ steps,
+  which needs a 24 GB GPU, or a hosted Wan (about $0.05 per 5 s clip at 480p, per the cohort's
+  price survey).

@@ -146,3 +146,18 @@ when the quota resets.
   transformer and the fp32 VAE (tiled decoding) onto the GPU and pass the stored embeddings.
 - **Fallback if it still fails:** every shot renders as a Ken Burns pan over its keyframe,
   which the brief accepts.
+
+**F11 outcome (18:07):** the two-phase load worked on a fresh session (after reinstalling `ftfy`,
+lost when the session restarted, F12). Measured on a Tesla T4: pipeline load and prompt encoding
+331 s; then s01, s04, s06, s11 at 8.6 to 8.7 min each (25 steps at about 10 s per step, the rest
+VAE decoding), peak 14.6 to 14.7 GB of 14.56 GiB. It fits, only just.
+
+## F12. Kaggle session restarts (17:30)
+
+- **What happened:** between runs the Kaggle session restarted (once on its own, once with the
+  GPU indicator showing red). Each restart threw away installed packages (`ftfy` missing gave
+  `NameError: name 'ftfy' is not defined`) and the 29 GB model cache, costing about 5 to 7 min
+  of re-download each time.
+- **Fix:** one cell that installs, clones and runs everything, so a restart costs only time; the
+  Wan script writes each clip with its hash as it finishes, so finished clips survive an
+  interrupted run and can be zipped by hand.
