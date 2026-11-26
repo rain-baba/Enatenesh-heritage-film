@@ -9,13 +9,13 @@
     "characters": [
       {
         "id": "father",
-        "description": "an Ethiopian man in his late thirties, slim and upright, warm brown skin, short dark curly hair, neat short moustache, kind confident eyes, wearing a white collared shirt under a brown wool jacket and dark trousers",
+        "description": "a Black Ethiopian man in his late thirties, slim build, dark brown skin, short black curly hair, short neat moustache, kind confident eyes, wearing a simple light beige short-sleeved cotton shirt and dark trousers, no suit, no jacket",
         "sheet_prompt": "Character reference sheet, full body, front view, standing relaxed and smiling.",
         "seed": 1101
       },
       {
         "id": "girl",
-        "description": "a seven-year-old Ethiopian girl, round cheerful face, warm brown skin, hair in neat cornrow braids with a small red ribbon, wearing a light blue cotton dress and white socks",
+        "description": "a seven-year-old Black Ethiopian girl, round cheerful face, dark brown skin, hair in neat cornrow braids with a small red ribbon, wearing a light blue cotton dress and white socks",
         "sheet_prompt": "Character reference sheet, full body, front view, standing and smiling shyly.",
         "seed": 2202
       }
