@@ -265,9 +265,9 @@
       "image_prompt": "Medium-wide shot of a traditional Ethiopian coffee ceremony (buna) in a modest city living room. In the foreground the father sits on a low stool among three Ethiopian men with dark brown skin and short black hair, talking confidently and gesturing with one hand, proud and outspoken; the men listen and smile. In the background an Ethiopian woman with dark brown skin, in a white habesha kemis dress, pours coffee from a black clay jebena into small cups on a wooden tray, with a bowl of popcorn and incense smoke. Fresh green grass on the floor.",
       "motion_prompt": "The man gestures as he talks, the men nod and smile, incense smoke drifts, camera slowly pushes in.",
       "seed": 117,
-      "narration": "ደፋር፣ ግልጽና ብልህ ነበር። ከጎረቤት ጋር ቡና ሲጠጡ በኩራት «እኔ የገረመው ልጅ ነኝ!» ይል ነበር። አባቱ ገረመው ጀግና ተዋጊ ነበር።",
-      "narration_en": "He was courageous, outspoken and clever. At coffee with the neighbours he would proudly say, 'I am Geremew's son!' His father Geremew was a brave warrior. (Kept from radio cut v2; Hana's 'just ጀግና' could not be voiced before the deadline, FAILURES F9.)",
-      "subtitle_en": "Brave, outspoken and clever. At coffee with the neighbours he'd proudly say: \"I am Geremew's son!\" His father Geremew was a brave warrior.",
+      "narration": "ደፋር፣ ግልጽና ብልህ ነበር። ከጎረቤት ጋር ቡና ሲጠጡ በኩራት «እኔ የገረመው ልጅ ነኝ!» ይል ነበር። አባቱ ገረመው ጀግና ነበር።",
+      "narration_en": "He was courageous, outspoken and clever. At coffee with the neighbours he would proudly say, 'I am Geremew's son!' His father Geremew was a hero. (Hana's correction from user tests 1 and 2: just ጀግና, not ጀግና ተዋጊ.)",
+      "subtitle_en": "Brave, outspoken and clever. At coffee with the neighbours he'd proudly say: \"I am Geremew's son!\" His father Geremew was a hero.",
       "render": "kenburns",
       "kenburns": {
         "zoom": "in",
