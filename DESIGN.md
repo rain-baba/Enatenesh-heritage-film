@@ -82,6 +82,32 @@ any word pronounced wrongly; does the voice sound like one person; what would yo
 5. **Shorter pauses** between lines (Beza): 0.15 s before and 0.3 s after each line, minimum shot 3 s.
 6. **Graduation ending** (Beza) had already been added at 13:48, so this confirmed it.
 
-## User test 2: near-final cut
+## User test 2: near-final cut (film v3, 84 s, sent 18:35, answers by 19:29)
 
-*Pending.*
+Same testers. Beza's answers had not arrived at the time of writing.
+
+| | Helen | Hana |
+|---|---|---|
+| Overall | "The film looks good... I'm proud of you. The way you tried to express him in these seconds is brave of you" | "You are making me cry" |
+| Pictures | "The image looks good"; "the little girl looks like you" | "The girl looks much like you"; childhood setting right ("we were in a suburban place when we were kids") |
+| Script and voice | "The way they express the script is good" | "Some words' pronunciation is still not correct"; "the warrior part is not changed as I gave in my comments before" |
+| What did not work | "The coffee ceremony is not expressed well"; "if it was a video with movements it would be better, but it still expresses the scenes" | "Some images did not match the script, sometimes late"; graduation should be in a modern city ("after we grew up we moved to a better city") |
+| Wish | | "Next time make a full short film with more memories" |
+
+**What lands:** the likeness of the girl (both, unprompted), the story, the narration. Both were
+moved again.
+
+**What I changed or found because of it:**
+1. **"Late" pictures, measured.** Every cut lands within 0.02 s of its planned time, so it is not
+   sync. The real cause is content: several lines carry two ideas over one picture (s02 opens with
+   "carried me on his shoulders" over the hand-holding picture; s08, s10, s11 each hold one image
+   for 10 to 17 s). The fix is more shots, one picture per idea: next version.
+2. **The warrior line (Hana, second time).** Fixed live in the walkthrough: s10's narration is
+   edited to "ጀግና" and only that line is regenerated (see the walkthrough and `runs.jsonl`).
+3. **Graduation in a modern city (Hana).** She asked for exactly what I had wanted at 16:13 and
+   could not generate after Cloudflare's daily allowance ran out (FAILURES F10). Next version.
+4. **Coffee ceremony (Helen).** Confirms what I saw: the weakest image even on the 9B model
+   (EXPERIMENTS E7, E8).
+5. **Motion (Helen).** She would have liked movement; the Wan clips I made were worse than the
+   pans because faces drifted (E11). Kept the pans, and noted that a better video model on a
+   bigger GPU is worth it for this audience.
