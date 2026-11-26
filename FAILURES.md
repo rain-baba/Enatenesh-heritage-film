@@ -124,3 +124,25 @@ To keep one consistent voice, s09 and s10 use their radio cut v2 recordings (sam
 voice). The cost: those two lines keep the words from before user test 1 (መምህር, and "ጀግና
 ተዋጊ" instead of Hana's "ጀግና"). Subtitles match what is spoken. Fixing them is the first job
 when the quota resets.
+
+## F10. Cloudflare's daily free image allowance used up (16:16)
+
+- **What happened:** `candidates s11` returned HTTP 429, "you have used up your daily free
+  allocation of 10,000 neurons". Three rounds of candidates, several on the larger
+  `flux-2-klein-9b` (which costs far more neurons per image than the 4B), spent the day's budget.
+  It resets at 00:00 UTC, after the deadline.
+- **Decision:** keep the existing s11 keyframe (graduation on a campus lawn) instead of the
+  city-street version I wanted; reverted that storyboard change so the cache stays valid.
+- **Lesson:** budget the bigger model. Neurons, not image count, are the real free-tier unit.
+
+## F11. Wan 2.2 TI2V-5B ran out of GPU memory on a Kaggle T4 (16:30)
+
+- **What happened:** the pipeline downloaded (28.8 GB) and loaded in 284 s, then s04 failed after
+  15 s: `CUDA out of memory ... 14.38 GiB is allocated by PyTorch` of 14.56 GiB.
+  `enable_model_cpu_offload()` was not enough: the UMT5 text encoder (~11 GB in fp16) and the 5B
+  transformer (~10 GB) together exceed one T4.
+- **Fix (two phases):** load everything on the CPU; put only the text encoder on the GPU, encode
+  every shot's motion prompt and the negative prompt, drop the text encoder; then move the
+  transformer and the fp32 VAE (tiled decoding) onto the GPU and pass the stored embeddings.
+- **Fallback if it still fails:** every shot renders as a Ken Burns pan over its keyframe,
+  which the brief accepts.
