@@ -54,9 +54,10 @@
     }
   },
   "timing": {
-    "pad_before_s": 0.4,
-    "pad_after_s": 0.7,
-    "min_shot_s": 4.0
+    "pad_before_s": 0.25,
+    "pad_after_s": 0.45,
+    "min_shot_s": 3.5,
+    "voice_tempo": 1.14
   },
   "shots": [
     {
@@ -336,6 +337,6 @@
       "Images: FLUX.2 klein · Video: Wan 2.2",
       "Music: ACE-Step 1.5 · Voice: Gemini TTS"
     ],
-    "seconds": 3.5
+    "seconds": 3.0
   }
 }

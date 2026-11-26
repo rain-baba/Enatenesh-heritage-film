@@ -33,11 +33,12 @@ ASPECTS = {
 
 def mix_audio(sb: dict, rows: list[dict], length: float) -> Path:
     narr = [r for r in rows if r["wav"]]
+    tempo = sb["timing"].get("voice_tempo", 1.0)
     args, chains = [], []
     for i, r in enumerate(narr):
         args += ["-i", str(r["wav"])]
         ms = int(r["voice_start"] * 1000)
-        chains.append(f"[{i}]aresample=48000,aformat=channel_layouts=stereo,adelay={ms}|{ms}[n{i}]")
+        chains.append(f"[{i}]aresample=48000,atempo={tempo},aformat=channel_layouts=stereo,adelay={ms}|{ms}[n{i}]")
     m = len(narr)
     args += ["-i", str(OUT / "music" / "score.wav")]
     music_lufs = sb["music"].get("music_lufs", -26)

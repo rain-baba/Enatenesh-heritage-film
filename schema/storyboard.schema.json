@@ -242,6 +242,13 @@
           "type": "number",
           "minimum": 2,
           "maximum": 12
+        },
+        "voice_tempo": {
+          "type": "number",
+          "minimum": 1.0,
+          "maximum": 1.25,
+          "default": 1.0,
+          "description": "Speed-up applied to narration in the edit (pitch kept), to fit 60-90 s without regenerating audio"
         }
       }
     },

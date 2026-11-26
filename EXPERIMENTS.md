@@ -21,3 +21,21 @@ Each entry: hypothesis, change, result. Logged calls are in `runs.jsonl`.
 - **Change:** v1 long instruction on its own line; v2 short prefix with a colon. Same voice
   (Sulafat), same text.
 - **Result:** v1: 10 of 11 lines implausibly long (s04: 19.9 s for 16 characters). v2: pending.
+
+## E3. Fitting 60 to 90 s without regenerating narration
+
+- **Hypothesis:** a 1.14x pitch-preserving speed-up (`atempo`) plus tighter padding brings the
+  radio cut under 90 s without sounding rushed, and costs no TTS quota.
+- **Change:** radio cut v2 (102.5 s: 84.4 s of voice, 1.1 s padding per shot, 3.5 s end card) to
+  v3: `voice_tempo` 1.14, padding 0.25 s before and 0.45 s after each line, minimum shot 3.5 s,
+  end card 3.0 s. Narration files untouched (cached), 0 new model calls.
+- **Result:** 88.0 s (computed by `timeline.build`: 89.3 s at 1.12, 88.0 at 1.14, 87.4 at 1.15).
+  Whether 1.14 sounds rushed is a question for user test 1.
+
+## E4. Mixed TTS models within one film
+
+- **Observation:** the daily quota fallback (FAILURES F4) means s01 to s08 were voiced by
+  `gemini-3.1-flash-tts-preview` and s09 to s11 by `gemini-2.5-flash-preview-tts`, same voice
+  name (Sulafat).
+- **Question for user test 1:** does the voice audibly change at s09? If it does, regenerate
+  s09 to s11 on 3.1 tomorrow's quota, or s01 to s08 on 2.5.
