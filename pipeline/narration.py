@@ -5,7 +5,9 @@ Guards learned the hard way (FAILURES.md F3, F4):
 - the style goes in a short "Say ...:" prefix; a long instruction was read aloud;
 - audio far longer than the text can need is rejected and retried;
 - each free-tier TTS model has its own daily quota, so when one is exhausted (HTTP 429)
-  or keeps producing implausible audio, the next model in `fallback_models` is used;
+  or keeps producing implausible audio, the next model in `fallback_models` is used.
+  User test 1 heard the voice change where the model changed, so fallback_models is now
+  empty: the stage stops rather than mixing voices;
 - leading and trailing silence is trimmed so the edit is cut to the voice."""
 from __future__ import annotations
 
@@ -119,7 +121,8 @@ def run(only: set[str] | None = None) -> None:
         if (only and sid not in only) or not text:
             continue
         out = DIR / f"{sid}.wav"
-        h = input_hash(text, cfg)
+        # the cache key is what determines the sound: text, model, voice, style
+        h = input_hash(text, cfg["model"], cfg["voice"], cfg["style_instruction"])
         if is_fresh(out, h):
             print(f"  narration {sid}: cached")
             continue

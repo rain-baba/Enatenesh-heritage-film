@@ -39,3 +39,13 @@ Each entry: hypothesis, change, result. Logged calls are in `runs.jsonl`.
   name (Sulafat).
 - **Question for user test 1:** does the voice audibly change at s09? If it does, regenerate
   s09 to s11 on 3.1 tomorrow's quota, or s01 to s08 on 2.5.
+
+## E5. Fixing TTS mispronunciation: respelling vs replacing
+
+- **Hypothesis:** words a native listener flagged can be fixed in the text without touching the
+  model: replace a word with a common synonym, or respell a name phonetically in Ethiopic script.
+- **Change (after user test 1):** ያስተዋውቀኝ → ያሳየኝ (s07) and መምህር → አስተማሪ (s09) replaced by
+  synonyms; the nickname ጨጓራ cannot be replaced, so it is respelled ጨግዋራ (ጓ written out as ግዋ)
+  for the TTS only. The displayed subtitle uses "Chegwara". Also መምህር's line was flagged by
+  Hana, ያስተዋውቀኝ by Beza, ጨጓራ by Helen.
+- **Result:** pending second listen by Helen, Hana and Beza.

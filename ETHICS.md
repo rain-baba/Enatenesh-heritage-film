@@ -7,7 +7,7 @@ person's voice is used or cloned: the narration is a stock Gemini TTS voice.
 
 | Person | Shown or voiced | Consent from | Form | Date | Scope |
 |---|---|---|---|---|---|
-| My father (deceased) | Shown, illustrated likeness | Helen and Hana, my sisters (his daughters) | Written message (kept privately) | 2026-11-26 | An AI-generated illustrated film of him, the narration script in `storyboard.json`, public posting with an AI label |
+| My father (deceased) | Shown, illustrated likeness | Helen and Hana, my sisters (his daughters) | Written messages from each, received 26 Nov (kept privately) | 2026-11-26 | An AI-generated illustrated film of him, the narration script in `storyboard.json`, public posting with an AI label |
 | Me (Segenet), as a child | Shown, illustrated | Myself | n/a | 2026-11-26 | Same |
 | Helen, Hana, Beza | Not shown; user-test feedback only | Each of them | Verbal / message | 2026-11-26 | Quoting their feedback in DESIGN.md by first name |
 

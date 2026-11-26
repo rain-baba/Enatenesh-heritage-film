@@ -32,11 +32,8 @@
       "model": "gemini-3.8-flash"
     },
     "tts": {
-      "model": "gemini-3.1-flash-tts-preview",
-      "fallback_models": [
-        "gemini-2.5-flash-preview-tts",
-        "gemini-3.8-flash-lite-tts"
-      ],
+      "model": "gemini-2.5-flash-preview-tts",
+      "fallback_models": [],
       "voice": "Sulafat",
       "style_instruction": "Say warmly and gently in Amharic"
     },
@@ -60,9 +57,9 @@
     }
   },
   "timing": {
-    "pad_before_s": 0.25,
-    "pad_after_s": 0.45,
-    "min_shot_s": 3.5,
+    "pad_before_s": 0.15,
+    "pad_after_s": 0.3,
+    "min_shot_s": 3.0,
     "voice_tempo": 1.14
   },
   "shots": [
@@ -147,8 +144,7 @@
       "kenburns": {
         "zoom": "in",
         "pan": "none"
-      },
-      "min_duration_s": 4.5
+      }
     },
     {
       "id": "s05",
@@ -204,9 +200,9 @@
       "image_prompt": "Medium shot in a small busy restaurant, the father and the girl sharing a large plate of food at a table, he is offering her a bite, she looks curious and delighted.",
       "motion_prompt": "The girl takes a bite and laughs, camera slowly drifts sideways.",
       "seed": 107,
-      "narration": "ሬስቶራንት ይወስደኝ፣ የተለያዩ ምግቦችንና አዳዲስ ነገሮችን ያስተዋውቀኝ ነበር።",
-      "narration_en": "took me to restaurants, and introduced me to different foods and new experiences.",
-      "subtitle_en": "took me to restaurants, and introduced me to different foods and new experiences.",
+      "narration": "ሬስቶራንት ይወስደኝ፣ የተለያዩ ምግቦችንና አዳዲስ ነገሮችን ያሳየኝ ነበር።",
+      "narration_en": "took me to restaurants, and showed me different foods and new things.",
+      "subtitle_en": "took me to restaurants, and showed me different foods and new things.",
       "render": "kenburns",
       "kenburns": {
         "zoom": "out",
@@ -225,9 +221,9 @@
       "image_prompt": "Medium shot at a wooden table at night lit by a warm oil lamp, the girl with an open exercise book looking puzzled, the father beside her laughing affectionately and pointing at the page.",
       "motion_prompt": "The man laughs and points at the book, the girl giggles, lamp light flickers softly, camera static.",
       "seed": 108,
-      "narration": "ትምህርቴን የሚያግዘኝም እሱ ነበር። ጥያቄ ሲያቅተኝ «ጨጓራ!» ይለኝ ነበር። እንደ ጓደኛ ነበር የምናወራው፤ ሰዎች በስልክ ስናወራ ከጓደኛዬ ጋር የማወራ ይመስላቸው ነበር።",
-      "narration_en": "He helped me with my studies. Whenever I couldn't answer a question, he would call me 'Chegura!' We talked like friends; people thought I was on the phone with a friend, not my father.",
-      "subtitle_en": "He helped me study. When I couldn't answer, he'd call me \"Chegura!\" We talked like friends. People thought I was on the phone with a friend, not my father.",
+      "narration": "ትምህርቴን የሚያግዘኝም እሱ ነበር። በጨዋታ «ጨግዋራ!» ይለኝ ነበር። እንደ ጓደኛ ነበር የምናወራው፤ ሰዎች በስልክ ስናወራ ከጓደኛዬ ጋር የማወራ ይመስላቸው ነበር።",
+      "narration_en": "He helped me with my studies. He would playfully call me 'Chegwara!' (ጨጓራ, respelled ጨግዋራ so the TTS pronounces it right). We talked like friends; people thought I was on the phone with a friend, not my father.",
+      "subtitle_en": "He helped me study. He'd playfully call me \"Chegwara!\", a saying all his own. We talked like friends. People thought I was on the phone with a friend, not my father.",
       "render": "wan",
       "kenburns": {
         "zoom": "in",
@@ -245,7 +241,7 @@
       "image_prompt": "Wide shot of a simple classroom with wooden desks, the father standing at a chalkboard teaching, students in uniforms listening attentively, sunlight through tall windows. The chalkboard has only simple chalk drawings, no writing.",
       "motion_prompt": "The teacher gestures toward the board, students listen, camera slowly pushes in.",
       "seed": 109,
-      "narration": "ተማሪዎቹ የሚወዱትና የሚያደንቁት መምህር ነበር።",
+      "narration": "ተማሪዎቹ የሚወዱትና የሚያደንቁት አስተማሪ ነበር።",
       "narration_en": "He was also a teacher, loved and appreciated by his students.",
       "subtitle_en": "He was also a teacher, loved and appreciated by his students.",
       "render": "kenburns",
@@ -265,9 +261,9 @@
       "image_prompt": "Low-angle medium shot inside a simple home during a traditional Ethiopian coffee ceremony, a clay jebena coffee pot and small cups on a low table, grass on the floor, incense smoke, neighbours seated around, the father standing tall in the middle, chest out, proudly speaking with one hand on his heart.",
       "motion_prompt": "Incense smoke drifts, the man speaks proudly with a hand on his heart, neighbours smile, camera slowly tilts up.",
       "seed": 110,
-      "narration": "ደፋር፣ ግልጽና ብልህ ነበር። ከጎረቤት ጋር ቡና ሲጠጡ በኩራት «እኔ የገረመው ልጅ ነኝ!» ይል ነበር። አባቱ ገረመው ጀግና ተዋጊ ነበር።",
-      "narration_en": "He was courageous, outspoken and clever. At coffee with the neighbours he would proudly say, 'I am Geremew's son!' His father Geremew was a warrior.",
-      "subtitle_en": "Brave, outspoken and clever. At coffee with the neighbours he'd proudly say: \"I am Geremew's son!\" His father Geremew was a warrior.",
+      "narration": "ደፋር፣ ግልጽና ብልህ ነበር። ከጎረቤት ጋር ቡና ሲጠጡ በኩራት «እኔ የገረመው ልጅ ነኝ!» ይል ነበር። አባቱ ገረመው ጀግና ነበር።",
+      "narration_en": "He was courageous, outspoken and clever. At coffee with the neighbours he would proudly say, 'I am Geremew's son!' His father Geremew was a hero.",
+      "subtitle_en": "Brave, outspoken and clever. At coffee with the neighbours he'd proudly say: \"I am Geremew's son!\" His father Geremew was a hero.",
       "render": "kenburns",
       "kenburns": {
         "zoom": "in",

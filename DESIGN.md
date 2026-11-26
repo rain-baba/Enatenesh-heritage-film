@@ -49,13 +49,36 @@ on the way to school, the coffee gathering, and the phone detail. Shot count and
   outfit overrides so he can wear a suit in that shot only.
 - **Every shot has a stated reason** in `storyboard.json` (`reason` field).
 
-## User test 1: radio cut
+## User test 1: radio cut (v3, 88 s, sent 12:45, answers by 14:10)
 
-*Pending.* Testers: Helen (sister), Hana (sister), Beza (best friend), all Amharic speakers.
+Testers: Helen (sister), Hana (sister), Beza (best friend); all native Amharic speakers.
+Questions: what is it about; what did you feel; anything confusing, too fast or too slow;
+any word pronounced wrongly; does the voice sound like one person; what would you remove or add.
 
-Questions: what is the story about in one sentence; what did you feel at the end; what was
-confusing, too fast or too slow; any word, name or place pronounced wrongly; what would you
-remove or add.
+| | Helen | Hana | Beza |
+|---|---|---|---|
+| What it's about | "A girl who loves her father, but she lost him" | "About a father and his love for his child" | "About a father" |
+| Feeling | "I cried" | "I cried. He was much more than this, but in 90 seconds you express most of it, especially your nickname" | (not answered) |
+| Pace | Did not notice a problem | (not answered) | "Too much break between the paragraphs" |
+| Pronunciation | ጨጓራ mispronounced, and the subtitle gives it no meaning | መምህር mispronounced | ያስተዋውቀኝ mispronounced |
+| One voice? | "No, after 0:56 it sounds like a different voice" | "Around 0:54 it changed the voice" | "Yes, the same person" |
+| Remove / add | | Remove ተዋጊ, just say ጀግና | Add the graduation picture with your father at the end |
+
+**What lands:** the story and the nickname. Two of three cried. Nobody asked to cut anything.
+
+**What changed because of it:**
+1. **One TTS model for every line.** The voice change at 0:54 is exactly where the quota
+   fallback switched models (s09, FAILURES F4). Fallbacks are now disabled for narration and
+   every line is regenerated on one model; the stage stops rather than mixing voices.
+2. **Pronunciation.** ያስተዋውቀኝ → ያሳየኝ (s07) and መምህር → አስተማሪ (s09); ጨጓራ is respelled ጨግዋራ
+   for the TTS (EXPERIMENTS E5).
+3. **ጨጓራ explained honestly.** Helen said the subtitle gave the word no meaning. I realised the
+   script itself was misleading: ጨጓራ has no literal meaning and was not about wrong answers; it
+   was just his saying. The line now says he called me "Chegwara!" playfully, and the subtitle
+   calls it "a saying all his own".
+4. **s10:** "ጀግና ተዋጊ" becomes "ጀግና" (Hana); subtitle "a warrior" becomes "a hero".
+5. **Shorter pauses** between lines (Beza): 0.15 s before and 0.3 s after each line, minimum shot 3 s.
+6. **Graduation ending** (Beza) had already been added at 13:48, so this confirmed it.
 
 ## User test 2: near-final cut
 
