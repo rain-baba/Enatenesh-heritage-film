@@ -46,9 +46,7 @@ on the way to school, the coffee gathering, and the phone detail. Shot count and
   sunset on his shoulders to me as a graduate, in gown and cap, walking arm in arm with him in a
   suit. The opening (on his shoulders) and the ending (beside him, grown up) now show the whole
   arc of what he gave me. Added a third character reference, the grown daughter, and per-shot
-  outfit overrides so he can wear a suit in that shot only. At 16:13 I moved it from a campus
-  lawn to a city street in Addis Ababa and made it explicitly a bachelor's graduation: I grew
-  up in the city, and the rural look was not my story.
+  outfit overrides so he can wear a suit in that shot only.
 - **Every shot has a stated reason** in `storyboard.json` (`reason` field).
 
 ## User test 1: radio cut (v3, 88 s, sent 12:45, answers by 14:10)
