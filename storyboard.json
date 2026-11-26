@@ -311,9 +311,9 @@
       22,
       33
     ],
-    "chosen": null,
-    "chosen_reason": "",
-    "music_lufs": -26,
+    "chosen": 22,
+    "chosen_reason": "All three candidates sounded almost the same to me (same caption, tempo and key; the seed only changed small details). Chose seed 22; it sat well under the voice once the level was raised.",
+    "music_lufs": -21,
     "cues": [
       {
         "at_shot": "s01",

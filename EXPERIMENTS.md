@@ -104,3 +104,23 @@ Each entry: hypothesis, change, result. Logged calls are in `runs.jsonl`.
   childhood. Chosen candidates are promoted byte for byte with `pipeline.run pick`, which
   checks the candidate's hash against the current prompt so the storyboard cannot drift from
   the image. s10: pending.
+
+## E9. Three ACE-Step candidates, one caption
+
+- **Hypothesis (the brief's "composer's sketchbook"):** three seeds of the same caption give
+  three meaningfully different scores to choose from.
+- **Change:** ACE-Step 1.5 turbo on a Kaggle T4, DiT only (`thinking=False`, no LM planner),
+  seeds 11, 22, 33, same caption, 70 bpm, A minor, 95 s, instrumental. About 8 s per track.
+- **Result:** to my ear the three were almost the same. With the planner off and everything
+  but the seed fixed, the seed mostly changes small details. Chose 22. Next time: vary the
+  caption or turn the LM planner on to get real alternatives.
+
+## E10. Centre-crop vs fit with blurred fill for 9:16 and 16:9
+
+- **Hypothesis:** centre-cropping the square masters is enough if subjects are centred.
+- **Result:** no. In the first full cut people near the edges were cut off, worst in 9:16
+  (which keeps only the middle 56% of the width): the girl in s02, the pair in s08 and s11.
+  Changed both exports to show the whole square picture with a blurred, darkened copy filling
+  the rest of the frame; in 9:16 the subtitles now sit in the band below the picture, which
+  also makes them easier to read. Music raised from -26 to -21 LUFS before ducking; at -26 it
+  was only audible with the volume turned up.

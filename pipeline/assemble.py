@@ -23,9 +23,11 @@ SIZE, FPS = 1080, 24
 WORK = OUT / "assembly"
 FINAL = OUT / "final"
 ASPECTS = {
-    # name: (crop of the square master, output size, subtitle wrap, libass style)
-    "16x9": ("1080:608", "1280:720", 42, "FontSize=17,MarginV=18,Outline=1.2,Shadow=0"),
-    "9x16": ("608:1080", "720:1280", 26, "FontSize=11,MarginV=70,Outline=1,Shadow=0"),
+    # name: (output width, output height, subtitle wrap, libass style)
+    # The whole square picture is shown, centred; the rest of the frame is a blurred, darkened
+    # copy of it. Centre-cropping cut people at the edges in the 9:16 version (user feedback).
+    "16x9": (1280, 720, 42, "FontSize=17,MarginV=18,Outline=1.2,Shadow=0"),
+    "9x16": (720, 1280, 26, "FontSize=11,MarginV=36,Outline=1,Shadow=0"),
 }
 
 
@@ -161,11 +163,14 @@ def run(mode: str = "film") -> list[Path]:
 
     outs = []
     aspects = {"16x9": ASPECTS["16x9"]} if mode == "radio" else ASPECTS
-    for name, (crop, scale, wrap, style) in aspects.items():
+    for name, (w, h, wrap, style) in aspects.items():
         srt = f"subs_{name}.srt"
         write_srt(rows, WORK / srt, wrap)
         out = FINAL / (f"radio_cut.mp4" if mode == "radio" else f"film_{name}.mp4")
-        vf = f"crop={crop},scale={scale}:flags=lanczos,subtitles={srt}:force_style='{style}',fps={FPS},format=yuv420p"
+        vf = (f"split=2[a][b];"
+              f"[a]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},boxblur=24:2,eq=brightness=-0.12[bg];"
+              f"[b]scale={w}:{h}:force_original_aspect_ratio=decrease:flags=lanczos[fg];"
+              f"[bg][fg]overlay=(W-w)/2:(H-h)/2,subtitles={srt}:force_style='{style}',fps={FPS},format=yuv420p")
         # run from WORK so the subtitles path has no drive letter or colon (Windows-safe)
         ffmpeg("-i", str(pic), "-i", str(audio), "-map", "0:v", "-map", "1:a", "-vf", vf,
                "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-r", str(FPS),
