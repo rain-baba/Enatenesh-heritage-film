@@ -9,11 +9,10 @@ everywhere and held my hand on the way to school. Once, while carrying me, we bo
 lost consciousness; I cried until he woke up. He brought me snacks, combed my hair, took me to
 restaurants, helped me study, and called me "Chegura!" (ጨጓራ) when I couldn't answer. We talked
 like friends. At coffee with the neighbours he would proudly say "I am Geremew's son!" He was a
-teacher his students loved. Of all the names he called me, the one I remember is *Enatenesh*,
-"you are my mother".
+teacher his students loved. Of all the names he called me, the one I remember is *Enatenesh*.
 
-**Logline:** A daughter remembers the father who raised her alone, and the special name he gave
-her: Enatenesh, "you are my mother".
+**Logline:** A daughter remembers the father who raised her alone, and the special name he called
+her: Enatenesh.
 
 **Story revision before any generation (10:06):** the first draft ended on the nickname *Alemé*
 ("my world"). I changed it to *Enatenesh*, the name he actually used most for me, added the hand
@@ -39,6 +38,10 @@ on the way to school, the coffee gathering, and the phone detail. Shot count and
   radio cut fixes the timing before any picture exists.
 - **s08 (Chegura, talking like friends) and s11 (Enatenesh) keep their full narration.** They are
   the heart of the story. If the film runs over 90 s, cut pauses and other lines first.
+- **"Enatenesh" is not translated in the subtitles (12:21).** I first glossed it as "you are my
+  mother". That is the literal reading, but it is an affectionate way of expressing love, not a
+  statement, and the literal gloss misleads. Title changed to "Enatenesh — A Father's Love";
+  the film is credited "A story by Segenet".
 - **Every shot has a stated reason** in `storyboard.json` (`reason` field).
 
 ## User test 1: radio cut

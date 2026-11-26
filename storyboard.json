@@ -1,6 +1,6 @@
 {
-  "title": "Enatenesh (እናቴነሽ)",
-  "logline": "A daughter remembers the father who raised her alone, and the special name he gave her: Enatenesh, \"you are my mother\".",
+  "title": "Enatenesh (እናቴነሽ) — A Father's Love",
+  "logline": "A daughter remembers the father who raised her alone, and the special name he called her: Enatenesh.",
   "language": "am",
   "audience": "My sisters Helen and Hana, my best friend Beza, and our wider family and friends: Amharic speakers watching on their phones, shared over Telegram and WhatsApp.",
   "intent": "They should feel warm gratitude for a father's everyday love and recognise him in the small moments: the shoulders, the snacks, the combed hair, the nickname. A smile through tears at the end.",
@@ -280,8 +280,8 @@
       "motion_prompt": "They walk slowly away from the camera into the sunset, camera static.",
       "seed": 111,
       "narration": "ከሰጠኝ ስሞች ሁሉ ሁሌም የማስታውሰው አንድ አለ፤ «እናቴነሽ»። ልጅነቴን ልዩ ያደረጉት ትልልቅ ነገሮች ሳይሆኑ ትናንሾቹ ነበሩ፤ ጨዋታችን፣ ሳቃችን፣ አብረን ያሳለፍናቸው ጊዜያት። እነዚያ ጊዜያት ሁሌም ከእኔ ጋር ናቸው።",
-      "narration_en": "Of all the names he called me, one I will always remember: Enatenesh, 'you are my mother'. It wasn't the big moments that made my childhood special, but the little things: our talks, our laughter, the time together. Those moments will always be part of me.",
-      "subtitle_en": "Of all the names he called me, one I'll always remember: Enatenesh, \"you are my mother\". It wasn't the big moments that made my childhood special. It was the little things: our talks, our laughter, our time together. Those moments will always be part of me.",
+      "narration_en": "Of all the names he called me, one I will always remember: Enatenesh. It wasn't the big moments that made my childhood special, but the little things: our talks, our laughter, the time together. Those moments will always be part of me.",
+      "subtitle_en": "Of all the names he called me, one I'll always remember: Enatenesh. It wasn't the big moments that made my childhood special. It was the little things: our talks, our laughter, our time together. Those moments will always be part of me.",
       "render": "wan",
       "kenburns": {
         "zoom": "out",
@@ -329,8 +329,8 @@
   },
   "end_card": {
     "lines": [
-      "Enatenesh · \"You are my mother\"",
-      "A story by Tihitna",
+      "Enatenesh — A Father's Love",
+      "A story by Segenet",
       "In loving memory of my father",
       "Made with AI",
       "Images: FLUX.2 klein · Video: Wan 2.2",

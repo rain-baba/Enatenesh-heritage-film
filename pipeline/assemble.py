@@ -111,7 +111,7 @@ def end_card(sb: dict) -> Path:
     img = Image.new("RGB", (SIZE, SIZE), "black")
     d = ImageDraw.Draw(img)
     lines = sb["end_card"]["lines"]
-    fonts = [_font(40)] + [_font(26)] * (len(lines) - 1)
+    fonts = [_font(36)] + [_font(26)] * (len(lines) - 1)
     heights = [d.textbbox((0, 0), l, font=f)[3] + 18 for l, f in zip(lines, fonts)]
     y = (SIZE - sum(heights)) / 2
     for l, f, h in zip(lines, fonts, heights):
