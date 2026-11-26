@@ -105,6 +105,11 @@ def _one(kind: str, key: str, prompt: str, seed: int, cfg: dict, refs: list[Path
     return False
 
 
+def shot_cfg(cfg: dict, shot: dict) -> dict:
+    """The stage's image config, with this shot's model override if it has one."""
+    return {**cfg, "model": shot["image_model"]} if "image_model" in shot else cfg
+
+
 def build_prompt(sb: dict, shot: dict, refs: list[str]) -> str:
     chars = {c["id"]: c for c in sb["style"]["characters"]}
     outfits = shot.get("outfits", {})
@@ -147,7 +152,7 @@ def run(only: set[str] | None = None) -> None:
             continue
         ref_ids = shot["characters"] if use_refs else []
         prompt = build_prompt(sb, shot, ref_ids)
-        if not _one("keyframe", shot["id"], prompt, shot["seed"], cfg,
+        if not _one("keyframe", shot["id"], prompt, shot["seed"], shot_cfg(cfg, shot),
                     [REFS / f"{cid}.png" for cid in ref_ids], KEYS / f"{shot['id']}.png"):
             failed.append(shot["id"])
     if failed:
@@ -168,7 +173,8 @@ def candidates(shot_ids: set[str]) -> None:
         refs = [REFS / f"{cid}.png" for cid in ref_ids]
         for i in range(CANDIDATE_SEEDS):
             seed = shot["seed"] + i * 7
-            _one("candidate", shot["id"], prompt, seed, cfg, refs, CANDS / f"{shot['id']}_seed{seed}.png")
+            _one("candidate", shot["id"], prompt, seed, shot_cfg(cfg, shot), refs,
+                 CANDS / f"{shot['id']}_seed{seed}.png")
 
 
 if __name__ == "__main__":

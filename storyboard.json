@@ -116,7 +116,7 @@
         "father",
         "girl"
       ],
-      "image_prompt": "Medium shot on a quiet dusty path: the father lying on his back on the ground, eyes closed, head resting on the soft dirt, body relaxed and natural as if asleep; the girl kneeling close beside him, crying, both small hands on his arm. Gentle dust in the air, overcast muted light.",
+      "image_prompt": "Wide shot of the whole scene on a quiet dirt path: the father lies on his back, his whole body visible from head to feet, legs stretched out straight on the ground, eyes closed as if asleep, no injuries. The little girl kneels beside his head, crying and frightened, reaching toward his face to wake him. Nothing covers his body or legs.",
       "motion_prompt": "Dust settles slowly, the girl's shoulders shake as she cries, camera static.",
       "seed": 117,
       "narration": "አንድ ቀን ተሸክሞኝ ሳለ ሁለታችንም ወደቅን። ለአፍታ ራሱን ሳተ። ያጣሁት መስሎኝ በጣም ፈራሁ።",
@@ -126,7 +126,8 @@
       "kenburns": {
         "zoom": "in",
         "pan": "none"
-      }
+      },
+      "image_model": "@cf/black-forest-labs/flux-2-klein-9b"
     },
     {
       "id": "s04",
@@ -220,9 +221,9 @@
         "father",
         "girl"
       ],
-      "image_prompt": "Medium close-up at a small wooden table in the evening in a city apartment, lit by a warm electric desk lamp with a light bulb. Exactly two people and nobody else: on the left the girl with an open exercise book, looking puzzled; on the right the father, leaning toward her, laughing affectionately. Plain wall behind them.",
+      "image_prompt": "Medium close-up at a small wooden table at night lit by a warm oil lamp. Exactly two people and nobody else: on the left the girl with an open exercise book, looking puzzled; on the right the father, leaning toward her, laughing affectionately. Plain wall behind them.",
       "motion_prompt": "The man laughs and points at the book, the girl giggles, camera static.",
-      "seed": 108,
+      "seed": 115,
       "narration": "ትምህርቴን የሚያግዘኝም እሱ ነበር። በጨዋታ «ጨግዋራ!» ይለኝ ነበር። እንደ ጓደኛ ነበር የምናወራው፤ ሰዎች በስልክ ስናወራ ከጓደኛዬ ጋር የማወራ ይመስላቸው ነበር።",
       "narration_en": "He helped me with my studies. He would playfully call me 'Chegwara!' (ጨጓራ, respelled ጨግዋራ so the TTS pronounces it right). We talked like friends; people thought I was on the phone with a friend, not my father.",
       "subtitle_en": "He helped me study. He'd playfully call me \"Chegwara!\", a saying all his own. We talked like friends. People thought I was on the phone with a friend, not my father.",
@@ -260,8 +261,8 @@
       "characters": [
         "father"
       ],
-      "image_prompt": "Medium shot inside a modest city living room in Addis Ababa during a traditional coffee ceremony. Seated on low stools around a small table with a black clay jebena coffee pot and small cups: four Ethiopian neighbours, men and women with dark brown skin and Black African features, in everyday clothes, two of the women with white netela shawls over their shoulders. Fresh green grass on the floor, a thin line of incense smoke. In the middle the father stands tall, chest out, one hand on his heart, proudly speaking while the neighbours smile up at him.",
-      "motion_prompt": "Incense smoke drifts, the man speaks proudly with a hand on his heart, neighbours smile, camera slowly tilts up.",
+      "image_prompt": "Medium-wide shot of a traditional Ethiopian coffee ceremony (buna) in a modest city living room. In the foreground the father sits on a low stool among three Ethiopian men with dark brown skin and short black hair, talking confidently and gesturing with one hand, proud and outspoken; the men listen and smile. In the background an Ethiopian woman with dark brown skin, in a white habesha kemis dress, pours coffee from a black clay jebena into small cups on a wooden tray, with a bowl of popcorn and incense smoke. Fresh green grass on the floor.",
+      "motion_prompt": "The man gestures as he talks, the men nod and smile, incense smoke drifts, camera slowly pushes in.",
       "seed": 110,
       "narration": "ደፋር፣ ግልጽና ብልህ ነበር። ከጎረቤት ጋር ቡና ሲጠጡ በኩራት «እኔ የገረመው ልጅ ነኝ!» ይል ነበር። አባቱ ገረመው ጀግና ተዋጊ ነበር።",
       "narration_en": "He was courageous, outspoken and clever. At coffee with the neighbours he would proudly say, 'I am Geremew's son!' His father Geremew was a brave warrior. (Kept from radio cut v2; Hana's 'just ጀግና' could not be voiced before the deadline, FAILURES F9.)",
@@ -269,8 +270,9 @@
       "render": "kenburns",
       "kenburns": {
         "zoom": "in",
-        "pan": "up"
-      }
+        "pan": "none"
+      },
+      "image_model": "@cf/black-forest-labs/flux-2-klein-9b"
     },
     {
       "id": "s11",

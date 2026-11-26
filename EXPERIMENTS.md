@@ -83,3 +83,19 @@ Each entry: hypothesis, change, result. Logged calls are in `runs.jsonl`.
   (jebena, rekebot, kemis) was not enough: the model has a weak picture of Ethiopians. Round 2
   states skin tone and features for every extra explicitly, moves the scene indoors in an
   Addis Ababa living room, and drops the pouring woman to keep the composition simple.
+- **Round 2 (15:59):** s08 with an electric lamp was worse than round 1, so s08 goes back to
+  the round 1 prompt, seed 115. s10 still failed: extras did not look Ethiopian, and the father
+  stood centre-stage brewing coffee, which is wrong culturally (a woman prepares buna; he sits
+  with the men). s03 still hid his legs behind the girl.
+
+## E8. A bigger image model only where the small one fails
+
+- **Hypothesis:** FLUX.2 klein 4B lacks a good prior for Ethiopian people and the buna ceremony;
+  the 9B variant on the same API will do better, and using it per shot keeps the other nine
+  keyframes (and their cache) untouched.
+- **Change:** per-shot `image_model` override; s03 and s10 on `flux-2-klein-9b`, with prompts
+  rewritten from my own description of the scenes (him seated among the men talking, a woman in
+  a habesha kemis pouring from the jebena in the background, popcorn and incense; in the fall,
+  her kneeling by his head so his whole body is visible). Style block unchanged so the look
+  stays consistent; I rejected switching these two shots to "realistic photograph".
+- **Result:** pending (3 candidates each). Time-boxed: this is the last round before moving on.

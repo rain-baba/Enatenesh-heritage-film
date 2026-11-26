@@ -24,6 +24,7 @@ surnames, places of residence, dates or other identifying family details are sen
 | Component | Licence / terms | Output use |
 |---|---|---|
 | FLUX.2 [klein] 4B (Cloudflare Workers AI) | Apache 2.0 weights; Cloudflare terms for the hosted API | Usable |
+| FLUX.2 [klein] 9B (Cloudflare Workers AI), s03 and s10 only | FLUX non-commercial licence on the weights | Fine for this non-commercial family film; would need replacing for any commercial use |
 | Wan 2.2 TI2V-5B | Apache 2.0 | Usable |
 | ACE-Step 1.5 | MIT (code); trained on licensed, royalty-free and synthetic data | Usable, including commercially |
 | Gemini TTS / Gemini Flash (free tier) | Google Gemini API terms; free-tier inputs may be used to improve products | Usable |
