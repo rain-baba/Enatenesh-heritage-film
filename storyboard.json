@@ -283,7 +283,7 @@
         "father",
         "daughter"
       ],
-      "image_prompt": "Wide shot at golden hour on a university campus lawn, the grown daughter in her graduation gown and cap walking side by side with her father, her arm linked in his, both smiling proudly, the father now older with a little grey in his hair, trees and a simple stone building softly in the background.",
+      "image_prompt": "Wide shot at golden hour on a city street in Addis Ababa on graduation day, modern buildings and a few trees softly in the background. The grown daughter, a new bachelor's degree graduate in a black graduation gown and square cap with a tassel, holding a rolled diploma, walks side by side with her father, her arm linked in his, both smiling proudly; the father is now older with a little grey in his hair.",
       "motion_prompt": "They walk slowly toward the camera arm in arm, her gown moves gently in the breeze, camera static.",
       "seed": 111,
       "narration": "ከሰጠኝ ስሞች ሁሉ ሁሌም የማስታውሰው አንድ አለ፤ «እናቴነሽ»። ልጅነቴን ልዩ ያደረጉት ትልልቅ ነገሮች ሳይሆኑ ትናንሾቹ ነበሩ፤ ጨዋታችን፣ ሳቃችን፣ አብረን ያሳለፍናቸው ጊዜያት። እነዚያ ጊዜያት ሁሌም ከእኔ ጋር ናቸው።",
@@ -297,7 +297,8 @@
       "min_duration_s": 8,
       "outfits": {
         "father": "a dark navy suit with a white shirt"
-      }
+      },
+      "image_model": "@cf/black-forest-labs/flux-2-klein-9b"
     }
   ],
   "music": {
