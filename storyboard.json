@@ -243,8 +243,8 @@
       "image_prompt": "Wide shot of a simple Ethiopian school classroom with wooden desks, the father standing at a chalkboard teaching, Black Ethiopian students in blue school uniforms listening attentively, sunlight through tall windows. The chalkboard has only simple chalk drawings, no writing.",
       "motion_prompt": "The teacher gestures toward the board, students listen, camera slowly pushes in.",
       "seed": 109,
-      "narration": "ተማሪዎቹ የሚወዱትና የሚያደንቁት አስተማሪ ነበር።",
-      "narration_en": "He was also a teacher, loved and appreciated by his students.",
+      "narration": "ተማሪዎቹ የሚወዱትና የሚያደንቁት መምህር ነበር።",
+      "narration_en": "He was also a teacher, loved and appreciated by his students. (Kept from radio cut v2: the TTS quota ran out before the አስተማሪ version could be voiced; FAILURES F9.)",
       "subtitle_en": "He was also a teacher, loved and appreciated by his students.",
       "render": "kenburns",
       "kenburns": {
@@ -263,9 +263,9 @@
       "image_prompt": "Low-angle medium shot inside a simple Ethiopian home during a traditional coffee ceremony: a black clay jebena coffee pot, small cups on a low table, fresh grass on the floor, incense smoke; Black Ethiopian neighbours, men and women in white cotton netela shawls, seated around; the father standing tall in the middle, chest out, proudly speaking with one hand on his heart.",
       "motion_prompt": "Incense smoke drifts, the man speaks proudly with a hand on his heart, neighbours smile, camera slowly tilts up.",
       "seed": 110,
-      "narration": "ደፋር፣ ግልጽና ብልህ ነበር። ከጎረቤት ጋር ቡና ሲጠጡ በኩራት «እኔ የገረመው ልጅ ነኝ!» ይል ነበር። አባቱ ገረመው ጀግና ነበር።",
-      "narration_en": "He was courageous, outspoken and clever. At coffee with the neighbours he would proudly say, 'I am Geremew's son!' His father Geremew was a hero.",
-      "subtitle_en": "Brave, outspoken and clever. At coffee with the neighbours he'd proudly say: \"I am Geremew's son!\" His father Geremew was a hero.",
+      "narration": "ደፋር፣ ግልጽና ብልህ ነበር። ከጎረቤት ጋር ቡና ሲጠጡ በኩራት «እኔ የገረመው ልጅ ነኝ!» ይል ነበር። አባቱ ገረመው ጀግና ተዋጊ ነበር።",
+      "narration_en": "He was courageous, outspoken and clever. At coffee with the neighbours he would proudly say, 'I am Geremew's son!' His father Geremew was a brave warrior. (Kept from radio cut v2; Hana's 'just ጀግና' could not be voiced before the deadline, FAILURES F9.)",
+      "subtitle_en": "Brave, outspoken and clever. At coffee with the neighbours he'd proudly say: \"I am Geremew's son!\" His father Geremew was a brave warrior.",
       "render": "kenburns",
       "kenburns": {
         "zoom": "in",

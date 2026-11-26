@@ -76,7 +76,9 @@ any word pronounced wrongly; does the voice sound like one person; what would yo
    script itself was misleading: ጨጓራ has no literal meaning and was not about wrong answers; it
    was just his saying. The line now says he called me "Chegwara!" playfully, and the subtitle
    calls it "a saying all his own".
-4. **s10:** "ጀግና ተዋጊ" becomes "ጀግና" (Hana); subtitle "a warrior" becomes "a hero".
+4. **s10:** "ጀግና ተዋጊ" should become "ጀግና" (Hana). Written into the script, but the TTS
+   quota ran out before it could be voiced (FAILURES F9); the film keeps the earlier recording
+   and its subtitle says "a brave warrior" to match. Same for መምህር in s09.
 5. **Shorter pauses** between lines (Beza): 0.15 s before and 0.3 s after each line, minimum shot 3 s.
 6. **Graduation ending** (Beza) had already been added at 13:48, so this confirmed it.
 

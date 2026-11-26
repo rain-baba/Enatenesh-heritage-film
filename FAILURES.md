@@ -117,3 +117,10 @@ What broke, what I tried, what fixed it. Evidence is in `runs.jsonl` (`status` =
   s11 was already on 2.5 flash and is reused from cache.
 - **Lesson:** on free tiers, budget the quota before a full regeneration: 11 lines plus
   retries is close to a whole day's allowance for one TTS model.
+
+**F9 outcome (15:00):** a retry at 14:45 got s07 and s08 through on 2.5 flash (the limit was
+partly per-minute), but by 15:00 both 2.5 flash and 2.5 pro returned daily-quota 429s for s09.
+To keep one consistent voice, s09 and s10 use their radio cut v2 recordings (same model, same
+voice). The cost: those two lines keep the words from before user test 1 (መምህር, and "ጀግና
+ተዋጊ" instead of Hana's "ጀግና"). Subtitles match what is spoken. Fixing them is the first job
+when the quota resets.
