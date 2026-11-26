@@ -49,3 +49,18 @@ Each entry: hypothesis, change, result. Logged calls are in `runs.jsonl`.
   for the TTS only. The displayed subtitle uses "Chegwara". Also መምህር's line was flagged by
   Hana, ያስተዋውቀኝ by Beza, ጨጓራ by Helen.
 - **Result:** pending second listen by Helen, Hana and Beza.
+
+## E6. Reference images first, then keyframes conditioned on them
+
+- **Hypothesis (the brief's suggested practice):** generating one reference image per character
+  and passing it to every keyframe keeps the father recognisably the same person across shots.
+- **Change:** 3 references (father waist up, girl head and shoulders, grown daughter), passed as
+  `input_image_N` to FLUX.2 klein with "Keep each character's face, hair, clothing and
+  proportions exactly as in the reference images", plus the same style block and description
+  text in every prompt.
+- **Result:** in keyframes v1 the father is the same man in all 10 shots he appears in (slim,
+  short hair, moustache, cream shirt, dark trousers), and the girl keeps her braids, red ribbons
+  and blue dress in all 7 of hers, judged from a contact sheet. The per-shot outfit override in
+  s11 (suit) worked without losing his face. Unreferenced extras drifted (FAILURES F7).
+  **Verdict:** this practice beat my instinct, which was to describe the characters well and
+  rely on fixed seeds.

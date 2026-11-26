@@ -81,3 +81,17 @@ What broke, what I tried, what fixed it. Evidence is in `runs.jsonl` (`status` =
   3. A shot flagged on all three seeds no longer stops the stage: the others still generate and
      the run ends by listing which prompts to rephrase.
   Tested against a mocked API before running for real.
+
+## F7. Background people drifted away from Ethiopia, and a stray figure in s08 (14:25)
+
+- **What happened:** reviewing keyframes v1 as a contact sheet, the father and the girl were
+  consistent in every shot (the reference images worked), but the people I had not described
+  were not: the students in s09 and the neighbours at the coffee ceremony in s10 came out looking
+  Mediterranean or European, and s08 had a half-cropped third person at the table.
+- **Why:** the reference images and character descriptions only cover named characters.
+  Everyone else falls back to the model's defaults.
+- **Fix:** s09 and s10 prompts now say "Black Ethiopian students in blue school uniforms" and
+  "Black Ethiopian neighbours ... in white netela shawls", with the jebena, grass and incense
+  named; s08 says "only two people in the room". Only those three keyframes regenerate
+  (3 Cloudflare calls); the other eight stay cached.
+- **Lesson:** consistency work has to cover the extras, not only the main characters.

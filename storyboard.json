@@ -218,7 +218,7 @@
         "father",
         "girl"
       ],
-      "image_prompt": "Medium shot at a wooden table at night lit by a warm oil lamp, the girl with an open exercise book looking puzzled, the father beside her laughing affectionately and pointing at the page.",
+      "image_prompt": "Medium shot at a wooden table at night lit by a warm oil lamp, only two people in the room: the girl with an open exercise book looking puzzled, and the father sitting beside her laughing affectionately and pointing at the page. No other people.",
       "motion_prompt": "The man laughs and points at the book, the girl giggles, lamp light flickers softly, camera static.",
       "seed": 108,
       "narration": "ትምህርቴን የሚያግዘኝም እሱ ነበር። በጨዋታ «ጨግዋራ!» ይለኝ ነበር። እንደ ጓደኛ ነበር የምናወራው፤ ሰዎች በስልክ ስናወራ ከጓደኛዬ ጋር የማወራ ይመስላቸው ነበር።",
@@ -238,7 +238,7 @@
       "characters": [
         "father"
       ],
-      "image_prompt": "Wide shot of a simple classroom with wooden desks, the father standing at a chalkboard teaching, students in uniforms listening attentively, sunlight through tall windows. The chalkboard has only simple chalk drawings, no writing.",
+      "image_prompt": "Wide shot of a simple Ethiopian school classroom with wooden desks, the father standing at a chalkboard teaching, Black Ethiopian students in blue school uniforms listening attentively, sunlight through tall windows. The chalkboard has only simple chalk drawings, no writing.",
       "motion_prompt": "The teacher gestures toward the board, students listen, camera slowly pushes in.",
       "seed": 109,
       "narration": "ተማሪዎቹ የሚወዱትና የሚያደንቁት አስተማሪ ነበር።",
@@ -258,7 +258,7 @@
       "characters": [
         "father"
       ],
-      "image_prompt": "Low-angle medium shot inside a simple home during a traditional Ethiopian coffee ceremony, a clay jebena coffee pot and small cups on a low table, grass on the floor, incense smoke, neighbours seated around, the father standing tall in the middle, chest out, proudly speaking with one hand on his heart.",
+      "image_prompt": "Low-angle medium shot inside a simple Ethiopian home during a traditional coffee ceremony: a black clay jebena coffee pot, small cups on a low table, fresh grass on the floor, incense smoke; Black Ethiopian neighbours, men and women in white cotton netela shawls, seated around; the father standing tall in the middle, chest out, proudly speaking with one hand on his heart.",
       "motion_prompt": "Incense smoke drifts, the man speaks proudly with a hand on his heart, neighbours smile, camera slowly tilts up.",
       "seed": 110,
       "narration": "ደፋር፣ ግልጽና ብልህ ነበር። ከጎረቤት ጋር ቡና ሲጠጡ በኩራት «እኔ የገረመው ልጅ ነኝ!» ይል ነበር። አባቱ ገረመው ጀግና ነበር።",
