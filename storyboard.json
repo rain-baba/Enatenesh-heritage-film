@@ -118,7 +118,7 @@
       ],
       "image_prompt": "Medium shot on a quiet dusty path: the father lying on his back on the ground, eyes closed, head resting on the soft dirt, body relaxed and natural as if asleep; the girl kneeling close beside him, crying, both small hands on his arm. Gentle dust in the air, overcast muted light.",
       "motion_prompt": "Dust settles slowly, the girl's shoulders shake as she cries, camera static.",
-      "seed": 103,
+      "seed": 117,
       "narration": "አንድ ቀን ተሸክሞኝ ሳለ ሁለታችንም ወደቅን። ለአፍታ ራሱን ሳተ። ያጣሁት መስሎኝ በጣም ፈራሁ።",
       "narration_en": "One day, while he was carrying me, we both fell. For a moment he lost consciousness. I was so scared; I thought I had lost him.",
       "subtitle_en": "One day, while he was carrying me, we both fell. For a moment he lost consciousness. I was so scared; I thought I had lost him.",
@@ -220,8 +220,8 @@
         "father",
         "girl"
       ],
-      "image_prompt": "Medium close-up at a small wooden table at night lit by a warm oil lamp. Exactly two people and nobody else: on the left the girl with an open exercise book, looking puzzled; on the right the father, leaning toward her, laughing affectionately. Plain wall behind them.",
-      "motion_prompt": "The man laughs and points at the book, the girl giggles, lamp light flickers softly, camera static.",
+      "image_prompt": "Medium close-up at a small wooden table in the evening in a city apartment, lit by a warm electric desk lamp with a light bulb. Exactly two people and nobody else: on the left the girl with an open exercise book, looking puzzled; on the right the father, leaning toward her, laughing affectionately. Plain wall behind them.",
+      "motion_prompt": "The man laughs and points at the book, the girl giggles, camera static.",
       "seed": 108,
       "narration": "ትምህርቴን የሚያግዘኝም እሱ ነበር። በጨዋታ «ጨግዋራ!» ይለኝ ነበር። እንደ ጓደኛ ነበር የምናወራው፤ ሰዎች በስልክ ስናወራ ከጓደኛዬ ጋር የማወራ ይመስላቸው ነበር።",
       "narration_en": "He helped me with my studies. He would playfully call me 'Chegwara!' (ጨጓራ, respelled ጨግዋራ so the TTS pronounces it right). We talked like friends; people thought I was on the phone with a friend, not my father.",
@@ -260,7 +260,7 @@
       "characters": [
         "father"
       ],
-      "image_prompt": "Medium shot of a traditional Ethiopian coffee ceremony (buna) in a simple home: in front, a woman in a white habesha kemis dress with a colourful tibeb border pours coffee from a black clay jebena pot into small handleless cups on a wooden rekebot tray; fresh green grass on the floor, smoke from an incense burner; Ethiopian neighbours in white netela shawls sit on low stools around; in the middle the father stands tall, chest out, proudly speaking with one hand on his heart.",
+      "image_prompt": "Medium shot inside a modest city living room in Addis Ababa during a traditional coffee ceremony. Seated on low stools around a small table with a black clay jebena coffee pot and small cups: four Ethiopian neighbours, men and women with dark brown skin and Black African features, in everyday clothes, two of the women with white netela shawls over their shoulders. Fresh green grass on the floor, a thin line of incense smoke. In the middle the father stands tall, chest out, one hand on his heart, proudly speaking while the neighbours smile up at him.",
       "motion_prompt": "Incense smoke drifts, the man speaks proudly with a hand on his heart, neighbours smile, camera slowly tilts up.",
       "seed": 110,
       "narration": "ደፋር፣ ግልጽና ብልህ ነበር። ከጎረቤት ጋር ቡና ሲጠጡ በኩራት «እኔ የገረመው ልጅ ነኝ!» ይል ነበር። አባቱ ገረመው ጀግና ተዋጊ ነበር።",

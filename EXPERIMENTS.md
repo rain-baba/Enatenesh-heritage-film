@@ -75,4 +75,11 @@ Each entry: hypothesis, change, result. Logged calls are in `runs.jsonl`.
   more concrete: the fall as lying on his back "as if asleep"; s08 "exactly two people and nobody
   else"; s10 names the buna ceremony elements (jebena, rekebot, habesha kemis, netela, grass,
   incense). s08 is now a Ken Burns shot to save GPU time.
-- **Result:** pending; the choice and the reason go here.
+- **Result, round 1 (15:39):** s03: seed 117 chosen, the only one where his whole body
+  reads naturally (seed 103 hides his legs). s08: all three removed the stray person; but I
+  grew up in a city with electricity, so the oil lamp was wrong: now an electric desk lamp.
+  s10: all three failed. The neighbours came out pale, in nun-like white robes, outdoors in a
+  Mediterranean street, and in one the father pours the coffee himself. Naming ceremony objects
+  (jebena, rekebot, kemis) was not enough: the model has a weak picture of Ethiopians. Round 2
+  states skin tone and features for every extra explicitly, moves the scene indoors in an
+  Addis Ababa living room, and drops the pouring woman to keep the composition simple.
