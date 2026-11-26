@@ -26,7 +26,7 @@ def gemini_models() -> None:
 def gemini_text(model: str) -> None:
     t0 = time.time()
     r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-                      headers={"x-goog-api-key": need("GEMINI_API_KEY")}, timeout=60,
+                      headers={"x-goog-api-key": need("GEMINI_API_KEY")}, timeout=120,
                       json={"contents": [{"parts": [{"text": "Translate to Amharic: my world"}]}]})
     ok = r.ok
     log_call("smoke", model, latency_s=time.time() - t0, status="ok" if ok else "error",

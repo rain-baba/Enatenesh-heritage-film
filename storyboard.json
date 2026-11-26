@@ -23,10 +23,10 @@
   },
   "models": {
     "text": {
-      "model": "gemini-flash-latest"
+      "model": "gemini-3.8-flash"
     },
     "tts": {
-      "model": "gemini-3.1-flash-tts-preview",
+      "model": "gemini-3.8-flash-tts",
       "voice": "Sulafat",
       "style_instruction": "Read the following Amharic text aloud as a grown daughter remembering her late childhood with love. Warm, calm, unhurried, with small natural pauses. Speak only the text."
     },
