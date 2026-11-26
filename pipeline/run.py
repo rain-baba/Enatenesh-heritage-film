@@ -4,6 +4,7 @@
     python -m pipeline.run radio                # narration + placeholder score on black
     python -m pipeline.run <stage> [shot ids]   # validate | narration | keyframes | shots | music
     python -m pipeline.run import <zip>         # bring in Kaggle outputs (Wan clips, ACE-Step)
+    python -m pipeline.run candidates s03 s08   # 3 keyframe options per shot to choose from
 
 Every stage reads storyboard.json and skips work whose inputs have not changed,
 so after editing one shot only that shot's model calls run again."""
@@ -47,6 +48,8 @@ def main(argv: list[str]) -> None:
         print("assemble"); assemble.run("film")
     elif cmd in {"narration", "keyframes", "shots"}:
         {"narration": narration, "keyframes": keyframes, "shots": shots}[cmd].run(rest or None)
+    elif cmd == "candidates":
+        keyframes.candidates(rest)
     elif cmd == "music":
         music.run()
     elif cmd == "assemble":

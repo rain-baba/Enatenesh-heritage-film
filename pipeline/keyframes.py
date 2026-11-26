@@ -22,6 +22,8 @@ from .common import (OUT, Retryable, check_http, ensure_dirs, file_sha, input_ha
 URL = "https://api.cloudflare.com/client/v4/accounts/{acct}/ai/run/{model}"
 REFS = OUT / "refs"
 KEYS = OUT / "keyframes"
+CANDS = OUT / "candidates"
+CANDIDATE_SEEDS = 3
 
 
 def _ref_bytes(path: Path) -> bytes:
@@ -150,6 +152,24 @@ def run(only: set[str] | None = None) -> None:
             failed.append(shot["id"])
     if failed:
         raise SystemExit(f"keyframes: flagged on every seed: {failed}. Rephrase those prompts and rerun.")
+
+def candidates(shot_ids: set[str]) -> None:
+    """Generate CANDIDATE_SEEDS options per shot into outputs/candidates/<shot>_seed<N>.png.
+    Pick one by setting that shot's seed in storyboard.json, then rerun keyframes."""
+    load_env()
+    sb = load_storyboard()
+    cfg = sb["models"]["image"]
+    ensure_dirs(CANDS)
+    for shot in sb["shots"]:
+        if shot["id"] not in shot_ids:
+            continue
+        ref_ids = shot["characters"] if cfg.get("use_references", True) else []
+        prompt = build_prompt(sb, shot, ref_ids)
+        refs = [REFS / f"{cid}.png" for cid in ref_ids]
+        for i in range(CANDIDATE_SEEDS):
+            seed = shot["seed"] + i * 7
+            _one("candidate", shot["id"], prompt, seed, cfg, refs, CANDS / f"{shot['id']}_seed{seed}.png")
+
 
 if __name__ == "__main__":
     import sys

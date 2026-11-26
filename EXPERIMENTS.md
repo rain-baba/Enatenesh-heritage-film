@@ -64,3 +64,15 @@ Each entry: hypothesis, change, result. Logged calls are in `runs.jsonl`.
   s11 (suit) worked without losing his face. Unreferenced extras drifted (FAILURES F7).
   **Verdict:** this practice beat my instinct, which was to describe the characters well and
   rely on fixed seeds.
+
+## E7. Several candidates per keyframe, chosen by eye
+
+- **Hypothesis:** for the shots that came out wrong after two prompt revisions (s03 the fall,
+  s08 homework with a stray person, s10 the coffee ceremony), generating three seeds per shot and
+  choosing one is faster than rewriting the prompt again and hoping.
+- **Change:** new `python -m pipeline.run candidates s03 s08 s10`: three seeds per shot
+  (seed, +7, +14) into `outputs/candidates/`, same prompt and references. Prompts were also made
+  more concrete: the fall as lying on his back "as if asleep"; s08 "exactly two people and nobody
+  else"; s10 names the buna ceremony elements (jebena, rekebot, habesha kemis, netela, grass,
+  incense). s08 is now a Ken Burns shot to save GPU time.
+- **Result:** pending; the choice and the reason go here.
