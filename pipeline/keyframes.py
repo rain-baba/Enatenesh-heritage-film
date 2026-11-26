@@ -51,6 +51,8 @@ def generate(prompt: str, seed: int, cfg: dict, refs: list[Path]) -> bytes:
                                   json={"prompt": prompt, "seed": seed, "steps": 8})
         except requests.RequestException as e:
             raise Retryable(str(e))
+        if r.status_code == 400 and '"code":3030' in r.text.replace(" ", ""):
+            raise Flagged(r.text[:300])
         check_http(r)
         res = r.json().get("result", {})
         img = res.get("image") if isinstance(res, dict) else None
@@ -65,24 +67,40 @@ def _save_png(raw: bytes, out: Path) -> None:
     Image.open(io.BytesIO(raw)).convert("RGB").save(out, "PNG")
 
 
-def _one(kind: str, key: str, prompt: str, seed: int, cfg: dict, refs: list[Path], out: Path) -> None:
+class Flagged(Exception):
+    """The provider's safety filter rejected the output (Cloudflare error 3030)."""
+
+
+SEED_STEP = 1000  # on a flagged output, try seed, seed+1000, seed+2000
+
+
+def _one(kind: str, key: str, prompt: str, seed: int, cfg: dict, refs: list[Path], out: Path) -> bool:
+    """Generate one image unless cached. Returns False if every seed was flagged."""
     h = input_hash(prompt, seed, cfg, [file_sha(p) for p in refs])
     if is_fresh(out, h):
         print(f"  {kind} {key}: cached")
-        return
-    t0 = time.time()
-    try:
-        raw = generate(prompt, seed, cfg, refs)
-    except Exception as e:
-        log_call(kind, cfg["model"], params={"prompt": prompt}, seed=seed, shot=key,
-                 latency_s=time.time() - t0, status="error", error=str(e))
-        raise
-    _save_png(raw, out)
-    mark_fresh(out, h)
-    log_call(kind, cfg["model"], seed=seed, shot=key, latency_s=time.time() - t0,
-             params={"prompt": prompt, "width": cfg["width"], "height": cfg["height"],
-                     "refs": [p.name for p in refs]})
-    print(f"  {kind} {key}: {time.time() - t0:.1f}s")
+        return True
+    params = {"prompt": prompt, "width": cfg["width"], "height": cfg["height"], "refs": [p.name for p in refs]}
+    for s in (seed, seed + SEED_STEP, seed + 2 * SEED_STEP):
+        t0 = time.time()
+        try:
+            raw = generate(prompt, s, cfg, refs)
+        except Flagged as e:
+            log_call(kind, cfg["model"], params=params, seed=s, shot=key, latency_s=time.time() - t0,
+                     status="flagged", error=str(e))
+            print(f"  {kind} {key}: seed {s} flagged by the safety filter, trying another seed")
+            continue
+        except Exception as e:
+            log_call(kind, cfg["model"], params=params, seed=s, shot=key, latency_s=time.time() - t0,
+                     status="error", error=str(e))
+            raise
+        _save_png(raw, out)
+        mark_fresh(out, h)
+        log_call(kind, cfg["model"], seed=s, shot=key, latency_s=time.time() - t0, params=params)
+        print(f"  {kind} {key}: {time.time() - t0:.1f}s (seed {s})")
+        return True
+    print(f"  {kind} {key}: FLAGGED on 3 seeds; rephrase its prompt in storyboard.json")
+    return False
 
 
 def build_prompt(sb: dict, shot: dict, refs: list[str]) -> str:
@@ -105,10 +123,14 @@ def run(only: set[str] | None = None) -> None:
     cfg = sb["models"]["image"]
     ensure_dirs(REFS, KEYS)
 
+    failed = []
     # 1. character references (sheet) first
     for c in sb["style"]["characters"]:
         prompt = f"{c['sheet_prompt']} {c['description']} {sb['style']['style_block']} Plain background. No text."
-        _one("reference", c["id"], prompt, c["seed"], cfg, [], REFS / f"{c['id']}.png")
+        if not _one("reference", c["id"], prompt, c["seed"], cfg, [], REFS / f"{c['id']}.png"):
+            failed.append(f"reference {c['id']}")
+    if failed:
+        raise SystemExit(f"keyframes: cannot continue without references: {failed}")
 
     # 2. keyframes conditioned on references
     use_refs = cfg.get("use_references", True)
@@ -117,9 +139,11 @@ def run(only: set[str] | None = None) -> None:
             continue
         ref_ids = shot["characters"] if use_refs else []
         prompt = build_prompt(sb, shot, ref_ids)
-        _one("keyframe", shot["id"], prompt, shot["seed"], cfg,
-             [REFS / f"{cid}.png" for cid in ref_ids], KEYS / f"{shot['id']}.png")
-
+        if not _one("keyframe", shot["id"], prompt, shot["seed"], cfg,
+                    [REFS / f"{cid}.png" for cid in ref_ids], KEYS / f"{shot['id']}.png"):
+            failed.append(shot["id"])
+    if failed:
+        raise SystemExit(f"keyframes: flagged on every seed: {failed}. Rephrase those prompts and rerun.")
 
 if __name__ == "__main__":
     import sys

@@ -53,3 +53,31 @@ What broke, what I tried, what fixed it. Evidence is in `runs.jsonl` (`status` =
   mocked API before running for real.
 - **Lesson:** the binding constraint on the free tier is requests per model per day, not money.
   Rejected and retried calls spend the same quota as good ones.
+
+## F5. The coding agent's weekly quota ran out (13:02)
+
+- **What happened:** Antigravity returned "Individual quota reached... Resets in 166h" on its
+  default model (Gemini 4 Hydrogen High) after about two hours of use, mid-way through running the
+  keyframes stage. Earlier it had also returned repeated "No capacity available" (HTTP 503) errors
+  for the same model.
+- **Tried:** switching models in the agent. Gemini Flash did not help; **Claude Opus 4.6** inside
+  Antigravity worked (quota is per model). Fallback plan if that runs out too: run the same
+  commands by hand in PowerShell; every step of the pipeline is an ordinary command.
+- **Lesson:** the agent is a convenience, not a dependency. Because the pipeline is plain
+  `python -m pipeline.run <stage>` commands, losing the agent cost minutes, not the project.
+
+## F6. Cloudflare's safety filter flagged a character reference image (13:19)
+
+- **What happened:** `flux-2-klein-4b` returned HTTP 400, code 3030, "Your output has been
+  flagged", on the first character reference. The filter judges the generated *output*, so the
+  same prompt can pass on one seed and fail on another. Full-body images of a child are the most
+  likely trigger.
+- **Fix:**
+  1. Reference prompts changed from full-body sheets to portraits (father waist up, girl head
+     and shoulders); the girl's description no longer lists clothing details or an exact age.
+     The fall (s03) now reads "lying on the ground with his eyes closed as if asleep".
+  2. A flagged output is logged as `status: "flagged"` and retried on seed+1000 and seed+2000.
+     The seed actually used is in `runs.jsonl`.
+  3. A shot flagged on all three seeds no longer stops the stage: the others still generate and
+     the run ends by listing which prompts to rephrase.
+  Tested against a mocked API before running for real.

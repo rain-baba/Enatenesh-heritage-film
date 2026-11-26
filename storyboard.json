@@ -10,13 +10,13 @@
       {
         "id": "father",
         "description": "a Black Ethiopian man in his late thirties, slim build, dark brown skin, short black curly hair, short neat moustache, kind confident eyes, wearing a simple light beige short-sleeved cotton shirt and dark trousers, no suit, no jacket",
-        "sheet_prompt": "Character reference sheet, full body, front view, standing relaxed and smiling.",
+        "sheet_prompt": "Character reference portrait, waist up, front view, relaxed and smiling.",
         "seed": 1101
       },
       {
         "id": "girl",
-        "description": "a seven-year-old Black Ethiopian girl, round cheerful face, dark brown skin, hair in neat cornrow braids with a small red ribbon, wearing a light blue cotton dress and white socks",
-        "sheet_prompt": "Character reference sheet, full body, front view, standing and smiling shyly.",
+        "description": "a young Black Ethiopian schoolgirl, round cheerful face, dark brown skin, hair in neat cornrow braids with a small red ribbon, in a simple light blue dress",
+        "sheet_prompt": "Character reference portrait, head and shoulders, front view, gentle smile.",
         "seed": 2202
       }
     ]
@@ -111,7 +111,7 @@
         "father",
         "girl"
       ],
-      "image_prompt": "Medium shot on a dusty path, the father lying still on his back on the ground with his eyes closed, the girl kneeling beside him crying, her hands on his chest, dust in the air, overcast muted light.",
+      "image_prompt": "Medium shot on a dusty path, the father lying on the ground with his eyes closed as if asleep, the girl kneeling beside him crying, dust in the air, overcast muted light.",
       "motion_prompt": "Dust settles slowly, the girl's shoulders shake as she cries, camera static.",
       "seed": 103,
       "narration": "አንድ ቀን ተሸክሞኝ ሳለ ሁለታችንም ወደቅን። ለአፍታ ራሱን ሳተ። ያጣሁት መስሎኝ በጣም ፈራሁ።",
