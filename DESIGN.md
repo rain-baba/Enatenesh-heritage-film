@@ -32,7 +32,7 @@ on the way to school, the coffee gathering, and the phone detail. Shot count and
   the grown daughter (me).
 - **Hand-painted gouache illustration, not photoreal.** It reads as memory, it is kinder to a
   real person's likeness, and stylised faces hold identity across shots better.
-- **Two characters only** (father, daughter at about seven), one outfit each, to limit drift. Neighbours and students appear only as background.
+- **Few characters** (father; daughter as a child; daughter grown up, s11 only), one outfit each except his suit in s11, to limit drift. Neighbours and students appear only as background.
 - **One motif:** her on his shoulders. It opens (s01) and closes (s11) the film.
 - **Cut to the voice:** each shot lasts as long as its narration line plus padding, so the
   radio cut fixes the timing before any picture exists.
@@ -42,6 +42,11 @@ on the way to school, the coffee gathering, and the phone detail. Shot count and
   mother". That is the literal reading, but it is an affectionate way of expressing love, not a
   statement, and the literal gloss misleads. Title changed to "Enatenesh — A Father's Love";
   the film is credited "A story by Segenet".
+- **New ending (13:48).** After seeing the first keyframes I changed s11 from walking into the
+  sunset on his shoulders to me as a graduate, in gown and cap, walking arm in arm with him in a
+  suit. The opening (on his shoulders) and the ending (beside him, grown up) now show the whole
+  arc of what he gave me. Added a third character reference, the grown daughter, and per-shot
+  outfit overrides so he can wear a suit in that shot only.
 - **Every shot has a stated reason** in `storyboard.json` (`reason` field).
 
 ## User test 1: radio cut

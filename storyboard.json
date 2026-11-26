@@ -18,6 +18,12 @@
         "description": "a young Black Ethiopian schoolgirl, round cheerful face, dark brown skin, hair in neat cornrow braids with a small red ribbon, in a simple light blue dress",
         "sheet_prompt": "Character reference portrait, head and shoulders, front view, gentle smile.",
         "seed": 2202
+      },
+      {
+        "id": "daughter",
+        "description": "a young Black Ethiopian woman in her early twenties, round cheerful face, dark brown skin, hair in neat braids, wearing a black graduation gown and cap with a gold tassel",
+        "sheet_prompt": "Character reference portrait, waist up, front view, proud smile.",
+        "seed": 3303
       }
     ]
   },
@@ -270,25 +276,28 @@
     },
     {
       "id": "s11",
-      "beat": "motif returns",
-      "reason": "Closes the circle on the opening image and lands the title: Enatenesh, his special name for her.",
+      "beat": "what he made possible",
+      "reason": "Ends on what his care made possible: the girl he carried is grown and graduating, walking beside him. The shoulders open the film; arm in arm closes it.",
       "shot_size": "wide",
       "characters": [
         "father",
-        "girl"
+        "daughter"
       ],
-      "image_prompt": "Wide shot from behind at sunset, the father walking away along a quiet road with the girl on his shoulders, long warm shadows, golden sky, the town softly in the distance.",
-      "motion_prompt": "They walk slowly away from the camera into the sunset, camera static.",
+      "image_prompt": "Wide shot at golden hour on a university campus lawn, the grown daughter in her graduation gown and cap walking side by side with her father, her arm linked in his, both smiling proudly, the father now older with a little grey in his hair, trees and a simple stone building softly in the background.",
+      "motion_prompt": "They walk slowly toward the camera arm in arm, her gown moves gently in the breeze, camera static.",
       "seed": 111,
       "narration": "ከሰጠኝ ስሞች ሁሉ ሁሌም የማስታውሰው አንድ አለ፤ «እናቴነሽ»። ልጅነቴን ልዩ ያደረጉት ትልልቅ ነገሮች ሳይሆኑ ትናንሾቹ ነበሩ፤ ጨዋታችን፣ ሳቃችን፣ አብረን ያሳለፍናቸው ጊዜያት። እነዚያ ጊዜያት ሁሌም ከእኔ ጋር ናቸው።",
       "narration_en": "Of all the names he called me, one I will always remember: Enatenesh. It wasn't the big moments that made my childhood special, but the little things: our talks, our laughter, the time together. Those moments will always be part of me.",
       "subtitle_en": "Of all the names he called me, one I'll always remember: Enatenesh. It wasn't the big moments that made my childhood special. It was the little things: our talks, our laughter, our time together. Those moments will always be part of me.",
       "render": "wan",
       "kenburns": {
-        "zoom": "out",
+        "zoom": "in",
         "pan": "none"
       },
-      "min_duration_s": 8
+      "min_duration_s": 8,
+      "outfits": {
+        "father": "a dark navy suit with a white shirt"
+      }
     }
   ],
   "music": {

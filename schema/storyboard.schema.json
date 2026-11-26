@@ -356,6 +356,13 @@
             "type": "number",
             "minimum": 2,
             "maximum": 15
+          },
+          "outfits": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Per-shot clothing override by character id; replaces the 'wearing ...' part of the description"
           }
         }
       }

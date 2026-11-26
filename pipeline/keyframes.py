@@ -105,13 +105,19 @@ def _one(kind: str, key: str, prompt: str, seed: int, cfg: dict, refs: list[Path
 
 def build_prompt(sb: dict, shot: dict, refs: list[str]) -> str:
     chars = {c["id"]: c for c in sb["style"]["characters"]}
+    outfits = shot.get("outfits", {})
     parts = []
     if refs:
+        keep = ("face, hair and proportions as in the reference images; clothing as described"
+                if outfits else "face, hair, clothing and proportions exactly as in the reference images")
         parts.append(" ".join(f"Image {i} shows the {cid}." for i, cid in enumerate(refs))
-                     + " Keep each character's face, hair, clothing and proportions exactly as in the reference images.")
+                     + f" Keep each character's {keep}.")
     parts.append(shot["image_prompt"])
     for cid in shot["characters"]:
-        parts.append(f"The {cid}: {chars[cid]['description']}")
+        desc = chars[cid]["description"]
+        if cid in outfits:  # swap the clothing clause for this shot only
+            desc = desc.split(", wearing")[0] + f", wearing {outfits[cid]}"
+        parts.append(f"The {cid}: {desc}")
     parts.append(sb["style"]["style_block"])
     parts.append("Subject centered in the frame. No text, no letters, no watermark.")
     return " ".join(parts)
