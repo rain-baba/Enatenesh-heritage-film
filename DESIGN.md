@@ -102,8 +102,10 @@ moved again.
    sync. The real cause is content: several lines carry two ideas over one picture (s02 opens with
    "carried me on his shoulders" over the hand-holding picture; s08, s10, s11 each hold one image
    for 10 to 17 s). The fix is more shots, one picture per idea: next version.
-2. **The warrior line (Hana, second time).** Fixed live in the walkthrough: s10's narration is
-   edited to "ጀግና" and only that line is regenerated (see the walkthrough and `runs.jsonl`).
+2. **The warrior line (Hana, second time).** Tried at 20:20: s10 edited to "ጀግና" and only that
+   line regenerated. The only TTS model with quota left, `gemini-3.8-flash-lite-tts`, read the
+   style prefix aloud ("Say warmly and gently in Amharic"), so I reverted to the approved take
+   (FAILURES F13). The change stays at the top of the list for when the quota resets.
 3. **Graduation in a modern city (Hana).** She asked for exactly what I had wanted at 16:13 and
    could not generate after Cloudflare's daily allowance ran out (FAILURES F10). Next version.
 4. **Coffee ceremony (Helen).** Confirms what I saw: the weakest image even on the 9B model

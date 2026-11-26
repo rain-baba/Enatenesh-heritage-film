@@ -161,3 +161,17 @@ VAE decoding), peak 14.6 to 14.7 GB of 14.56 GiB. It fits, only just.
 - **Fix:** one cell that installs, clones and runs everything, so a restart costs only time; the
   Wan script writes each clip with its hash as it finishes, so finished clips survive an
   interrupted run and can be zipped by hand.
+
+## F13. The last fallback TTS model also spoke the instruction (20:20)
+
+- **What happened:** to apply Hana's "just ጀግና" fix to s10, the narration stage went down the
+  fallback list (2.5 flash and 2.5 pro both at their daily quota) to `gemini-3.8-flash-lite-tts`.
+  It returned audio, the length guard passed it, and the film then contained the English words
+  "Say warmly and gently in Amharic" before the line.
+- **Why the guard missed it:** the guard allows `chars / 6 + 3` seconds. s10 is long (87
+  characters, limit 17.5 s), so the extra spoken English still fitted under it. The guard catches
+  a prompt read aloud on short lines, not on long ones.
+- **Fix:** reverted s10 to the approved recording (`git checkout -- outputs`, `git revert`); the
+  failed attempt stays in `runs.jsonl`. Next step: make the guard relative to the line's own
+  previous length, or transcribe the audio and check it starts with the Amharic text.
+- **Lesson:** both 3.8 TTS models treat the style prefix as text; 2.5 and 3.1 do not.
