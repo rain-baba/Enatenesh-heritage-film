@@ -1,4 +1,4 @@
-# Alemé (My World): a heritage short made by a pipeline
+# Enatenesh (እናቴነሽ): a heritage short made by a pipeline
 
 A 60 to 90 second film about my father, narrated in Amharic with English subtitles and an
 original score. It is generated from one file, `storyboard.json`, by a small pipeline:

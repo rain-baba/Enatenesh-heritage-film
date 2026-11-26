@@ -1,6 +1,6 @@
 {
-  "title": "Alemé (My World)",
-  "logline": "A daughter remembers the father who raised her alone, and why he called her Alemé, my world.",
+  "title": "Enatenesh (እናቴነሽ)",
+  "logline": "A daughter remembers the father who raised her alone, and the special name he gave her: Enatenesh, \"you are my mother\".",
   "language": "am",
   "audience": "My sisters Helen and Hana, my best friend Beza, and our wider family and friends: Amharic speakers watching on their phones, shared over Telegram and WhatsApp.",
   "intent": "They should feel warm gratitude for a father's everyday love and recognise him in the small moments: the shoulders, the snacks, the combed hair, the nickname. A smile through tears at the end.",
@@ -22,150 +22,267 @@
     ]
   },
   "models": {
-    "text": {"model": "gemini-flash-latest"},
+    "text": {
+      "model": "gemini-flash-latest"
+    },
     "tts": {
       "model": "gemini-3.1-flash-tts-preview",
       "voice": "Sulafat",
       "style_instruction": "Read the following Amharic text aloud as a grown daughter remembering her late childhood with love. Warm, calm, unhurried, with small natural pauses. Speak only the text."
     },
-    "image": {"model": "@cf/black-forest-labs/flux-2-klein-4b", "width": 1024, "height": 1024, "use_references": true},
-    "video": {"model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers", "width": 512, "height": 512, "num_frames": 81, "steps": 25, "guidance": 5.0, "fps": 24},
-    "music": {"model": "ACE-Step/Ace-Step1.5:acestep-v15-turbo"}
+    "image": {
+      "model": "@cf/black-forest-labs/flux-2-klein-4b",
+      "width": 1024,
+      "height": 1024,
+      "use_references": true
+    },
+    "video": {
+      "model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "width": 512,
+      "height": 512,
+      "num_frames": 81,
+      "steps": 25,
+      "guidance": 5.0,
+      "fps": 24
+    },
+    "music": {
+      "model": "ACE-Step/Ace-Step1.5:acestep-v15-turbo"
+    }
   },
-  "timing": {"pad_before_s": 0.6, "pad_after_s": 0.9, "min_shot_s": 4.5},
+  "timing": {
+    "pad_before_s": 0.4,
+    "pad_after_s": 0.7,
+    "min_shot_s": 4.0
+  },
   "shots": [
     {
-      "id": "s01", "beat": "opening motif",
+      "id": "s01",
+      "beat": "opening motif",
       "reason": "Opens on the image the whole film returns to: her on his shoulders. Wide, so we know where we are.",
-      "shot_size": "wide", "characters": ["father", "girl"],
+      "shot_size": "wide",
+      "characters": [
+        "father",
+        "girl"
+      ],
       "image_prompt": "Wide shot of a quiet dirt street in a small town in the morning, eucalyptus trees and low tin-roofed houses, the father walking toward the camera with the girl sitting on his shoulders, her hands on his head, both smiling.",
       "motion_prompt": "The man walks slowly toward the camera, the girl sways gently on his shoulders, leaves move in a light breeze, camera static.",
       "seed": 101,
-      "narration": "አባቴ ሁሉ ነገሬ ነበር። ብቻውን ነው ያሳደገኝ።",
-      "narration_en": "My father was everything to me. He raised me on his own.",
-      "subtitle_en": "My father was everything to me. He raised me on his own.",
-      "render": "wan", "kenburns": {"zoom": "in", "pan": "none"}
+      "narration": "አባቴ ሁሉ ነገሬ ነበር። ብቻውን ነው ያሳደገኝ፤ በልጅነቴ ሁሌም ከጎኔ ነበር።",
+      "narration_en": "My father was everything to me. He raised me on his own, and throughout my childhood he was always there for me.",
+      "subtitle_en": "My father was everything to me. He raised me on his own, and throughout my childhood he was always there for me.",
+      "render": "wan",
+      "kenburns": {
+        "zoom": "in",
+        "pan": "none"
+      }
     },
     {
-      "id": "s02", "beat": "daily care",
-      "reason": "Shows the routine: he carried her everywhere, even to school. The school gate makes it specific.",
-      "shot_size": "medium", "characters": ["father", "girl"],
-      "image_prompt": "Medium shot at a simple painted school gate with a few children in the background, the father with the girl on his shoulders, she is waving at the gate.",
-      "motion_prompt": "The girl waves, the man smiles, camera slowly pushes in.",
+      "id": "s02",
+      "beat": "daily care",
+      "reason": "Shows the daily care: shoulders everywhere, and his hand walking her to school.",
+      "shot_size": "medium",
+      "characters": [
+        "father",
+        "girl"
+      ],
+      "image_prompt": "Medium shot on a dirt road leading to a simple painted school gate, a few children in the background, the father walking hand in hand with the girl, she carries a small school bag and looks up at him.",
+      "motion_prompt": "They walk slowly toward the gate hand in hand, the girl swings their hands, camera slowly pushes in.",
       "seed": 102,
-      "narration": "የትም ስንሄድ በትከሻው ይሸከመኝ ነበር። ትምህርት ቤትም የሚወስደኝ እሱ ነበር።",
-      "narration_en": "Wherever we went, he carried me on his shoulders. He was the one who took me to school.",
-      "subtitle_en": "Wherever we went, he carried me on his shoulders. He was the one who took me to school.",
-      "render": "kenburns", "kenburns": {"zoom": "in", "pan": "right"}
+      "narration": "የትም ስንሄድ በትከሻው ይሸከመኝ ነበር። እጄን ይዞም ትምህርት ቤት ያደርሰኝ ነበር።",
+      "narration_en": "He used to carry me on his shoulders wherever we went. He also held my hand and walked me to school.",
+      "subtitle_en": "He used to carry me on his shoulders wherever we went. He also held my hand and walked me to school.",
+      "render": "kenburns",
+      "kenburns": {
+        "zoom": "in",
+        "pan": "right"
+      }
     },
     {
-      "id": "s03", "beat": "the fall",
+      "id": "s03",
+      "beat": "the fall",
       "reason": "The one moment of fear in the film. Without it, the love has no stakes.",
-      "shot_size": "medium", "characters": ["father", "girl"],
+      "shot_size": "medium",
+      "characters": [
+        "father",
+        "girl"
+      ],
       "image_prompt": "Medium shot on a dusty path, the father lying still on his back on the ground with his eyes closed, the girl kneeling beside him crying, her hands on his chest, dust in the air, overcast muted light.",
       "motion_prompt": "Dust settles slowly, the girl's shoulders shake as she cries, camera static.",
       "seed": 103,
-      "narration": "አንድ ቀን እንደተሸከመኝ ሁለታችንም ወደቅን። ለአፍታ ራሱን ሳተ። ያጣሁት መሰለኝና አለቀስኩ።",
-      "narration_en": "One day, while he was carrying me, we both fell. For a moment he lost consciousness. I thought I had lost him, and I cried.",
-      "subtitle_en": "One day, while he was carrying me, we both fell. For a moment he lost consciousness. I thought I had lost him, and I cried.",
-      "render": "kenburns", "kenburns": {"zoom": "in", "pan": "none"}
+      "narration": "አንድ ቀን ተሸክሞኝ ሳለ ሁለታችንም ወደቅን። ለአፍታ ራሱን ሳተ። ያጣሁት መስሎኝ በጣም ፈራሁ።",
+      "narration_en": "One day, while he was carrying me, we both fell. For a moment he lost consciousness. I was so scared; I thought I had lost him.",
+      "subtitle_en": "One day, while he was carrying me, we both fell. For a moment he lost consciousness. I was so scared; I thought I had lost him.",
+      "render": "kenburns",
+      "kenburns": {
+        "zoom": "in",
+        "pan": "none"
+      }
     },
     {
-      "id": "s04", "beat": "relief",
-      "reason": "Close-up for the release of the fear: his eyes open and he smiles at her.",
-      "shot_size": "close", "characters": ["father"],
+      "id": "s04",
+      "beat": "relief",
+      "reason": "Close-up for the release of the fear: as the line ends, his eyes open and he smiles at her.",
+      "shot_size": "close",
+      "characters": [
+        "father"
+      ],
       "image_prompt": "Close-up of the father's face lying on the ground, eyes just opening, a small reassuring smile, soft warm light returning.",
       "motion_prompt": "His eyes slowly open and he smiles softly, camera static.",
       "seed": 104,
-      "narration": "ከዚያም ዓይኑን ከፈተ።",
-      "narration_en": "Then he woke up.",
-      "subtitle_en": "Then he woke up.",
-      "render": "wan", "kenburns": {"zoom": "in", "pan": "none"},
+      "narration": "እስኪነቃ ድረስ አለቀስኩ።",
+      "narration_en": "I cried until he woke up.",
+      "subtitle_en": "I cried until he woke up.",
+      "render": "wan",
+      "kenburns": {
+        "zoom": "in",
+        "pan": "none"
+      },
       "min_duration_s": 4.5
     },
     {
-      "id": "s05", "beat": "small rituals",
+      "id": "s05",
+      "beat": "small rituals",
       "reason": "Starts the run of everyday moments; the snacks are what a child remembers.",
-      "shot_size": "medium", "characters": ["father", "girl"],
+      "shot_size": "medium",
+      "characters": [
+        "father",
+        "girl"
+      ],
       "image_prompt": "Medium shot in the doorway of a modest home at dusk, the father just home from work holding out a small paper bag of snacks, the girl running toward him with open arms.",
       "motion_prompt": "The girl reaches for the bag, the man laughs, camera slowly pushes in.",
       "seed": 105,
-      "narration": "ከሥራ ሲመለስ ሁልጊዜ መክሰስ ይዞልኝ ይመጣ ነበር።",
+      "narration": "ከሥራ ሲመለስ ሁሌም መክሰስ ይዞልኝ ይመጣ ነበር።",
       "narration_en": "Whenever he came home from work, he brought me snacks.",
       "subtitle_en": "Whenever he came home from work, he brought me snacks.",
-      "render": "kenburns", "kenburns": {"zoom": "in", "pan": "left"}
+      "render": "kenburns",
+      "kenburns": {
+        "zoom": "in",
+        "pan": "left"
+      }
     },
     {
-      "id": "s06", "beat": "tenderness",
+      "id": "s06",
+      "beat": "tenderness",
       "reason": "A father combing his daughter's hair is the most tender image in the story and shows he did everything himself.",
-      "shot_size": "medium_close", "characters": ["father", "girl"],
+      "shot_size": "medium_close",
+      "characters": [
+        "father",
+        "girl"
+      ],
       "image_prompt": "Medium close-up indoors by a window, the girl sitting on a low stool, the father behind her gently combing and braiding her hair, both calm, soft window light.",
       "motion_prompt": "The man's hands gently comb her hair, the girl smiles with closed eyes, camera static.",
       "seed": 106,
-      "narration": "ፀጉሬን ያበጥርልኝ ነበር።",
-      "narration_en": "He combed my hair.",
+      "narration": "ፀጉሬን ያበጥርልኝ፣",
+      "narration_en": "He combed my hair,",
       "subtitle_en": "He combed my hair,",
-      "render": "wan", "kenburns": {"zoom": "in", "pan": "none"}
+      "render": "wan",
+      "kenburns": {
+        "zoom": "in",
+        "pan": "none"
+      }
     },
     {
-      "id": "s07", "beat": "the world through him",
+      "id": "s07",
+      "beat": "the world through him",
       "reason": "He opened the world to her: new places and new foods.",
-      "shot_size": "medium", "characters": ["father", "girl"],
+      "shot_size": "medium",
+      "characters": [
+        "father",
+        "girl"
+      ],
       "image_prompt": "Medium shot in a small busy restaurant, the father and the girl sharing a large plate of food at a table, he is offering her a bite, she looks curious and delighted.",
       "motion_prompt": "The girl takes a bite and laughs, camera slowly drifts sideways.",
       "seed": 107,
-      "narration": "ሬስቶራንት ይወስደኝ፣ አዳዲስ ምግቦችንና አዳዲስ ነገሮችን ያስተዋውቀኝ ነበር።",
-      "narration_en": "He took me to restaurants and introduced me to new foods and new experiences.",
-      "subtitle_en": "took me to restaurants, and introduced me to new foods and new experiences.",
-      "render": "kenburns", "kenburns": {"zoom": "out", "pan": "right"}
+      "narration": "ሬስቶራንት ይወስደኝ፣ የተለያዩ ምግቦችንና አዳዲስ ነገሮችን ያስተዋውቀኝ ነበር።",
+      "narration_en": "took me to restaurants, and introduced me to different foods and new experiences.",
+      "subtitle_en": "took me to restaurants, and introduced me to different foods and new experiences.",
+      "render": "kenburns",
+      "kenburns": {
+        "zoom": "out",
+        "pan": "right"
+      }
     },
     {
-      "id": "s08", "beat": "friendship and humour",
+      "id": "s08",
+      "beat": "friendship and humour",
       "reason": "The nickname and the friendship between them; the lightest, funniest beat.",
-      "shot_size": "medium", "characters": ["father", "girl"],
+      "shot_size": "medium",
+      "characters": [
+        "father",
+        "girl"
+      ],
       "image_prompt": "Medium shot at a wooden table at night lit by a warm oil lamp, the girl with an open exercise book looking puzzled, the father beside her laughing affectionately and pointing at the page.",
       "motion_prompt": "The man laughs and points at the book, the girl giggles, lamp light flickers softly, camera static.",
       "seed": 108,
-      "narration": "ትምህርቴን ያግዘኝ ነበር። ጥያቄ ሲያቅተኝ «ጨጉራ!» ይለኝ ነበር። እንደ ጓደኛ ነበር የምናወራው።",
-      "narration_en": "He helped me with my studies. Whenever I couldn't answer a question, he would call me 'Chegura!' We talked like friends.",
-      "subtitle_en": "He helped me study. When I couldn't answer, he'd call me \"Chegura!\" We talked like friends.",
-      "render": "wan", "kenburns": {"zoom": "in", "pan": "none"}
+      "narration": "ትምህርቴን የሚያግዘኝም እሱ ነበር። ጥያቄ ሲያቅተኝ «ጨጓራ!» ይለኝ ነበር። እንደ ጓደኛ ነበር የምናወራው፤ ሰዎች በስልክ ስናወራ ከጓደኛዬ ጋር የማወራ ይመስላቸው ነበር።",
+      "narration_en": "He helped me with my studies. Whenever I couldn't answer a question, he would call me 'Chegura!' We talked like friends; people thought I was on the phone with a friend, not my father.",
+      "subtitle_en": "He helped me study. When I couldn't answer, he'd call me \"Chegura!\" We talked like friends. People thought I was on the phone with a friend, not my father.",
+      "render": "wan",
+      "kenburns": {
+        "zoom": "in",
+        "pan": "none"
+      }
     },
     {
-      "id": "s09", "beat": "who he was to others",
+      "id": "s09",
+      "beat": "who he was to others",
       "reason": "Shows him outside the home: strict, respected and loved by his students.",
-      "shot_size": "wide", "characters": ["father"],
+      "shot_size": "wide",
+      "characters": [
+        "father"
+      ],
       "image_prompt": "Wide shot of a simple classroom with wooden desks, the father standing at a chalkboard teaching, students in uniforms listening attentively, sunlight through tall windows. The chalkboard has only simple chalk drawings, no writing.",
       "motion_prompt": "The teacher gestures toward the board, students listen, camera slowly pushes in.",
       "seed": 109,
-      "narration": "መምህር ነበር። ጥብቅ ቢሆንም ተማሪዎቹ ይወዱትና ያከብሩት ነበር።",
-      "narration_en": "He was a teacher. He was strict, but his students loved and respected him.",
-      "subtitle_en": "He was a teacher. Strict, but his students loved and respected him.",
-      "render": "kenburns", "kenburns": {"zoom": "in", "pan": "none"}
+      "narration": "ተማሪዎቹ የሚወዱትና የሚያደንቁት መምህር ነበር።",
+      "narration_en": "He was also a teacher, loved and appreciated by his students.",
+      "subtitle_en": "He was also a teacher, loved and appreciated by his students.",
+      "render": "kenburns",
+      "kenburns": {
+        "zoom": "in",
+        "pan": "none"
+      }
     },
     {
-      "id": "s10", "beat": "pride and courage",
-      "reason": "His courage and family pride; the low angle makes him tall, as a child saw him.",
-      "shot_size": "medium", "characters": ["father"],
-      "image_prompt": "Low-angle medium shot of the father standing tall and proud on a hill at golden hour, chest out, chin up, wind in his jacket, wide sky behind him.",
-      "motion_prompt": "Wind moves his jacket, he looks into the distance, camera slowly tilts up.",
+      "id": "s10",
+      "beat": "pride and courage",
+      "reason": "His courage and family pride, at the coffee gathering where he said it; the low angle makes him tall, as a child saw him.",
+      "shot_size": "medium",
+      "characters": [
+        "father"
+      ],
+      "image_prompt": "Low-angle medium shot inside a simple home during a traditional Ethiopian coffee ceremony, a clay jebena coffee pot and small cups on a low table, grass on the floor, incense smoke, neighbours seated around, the father standing tall in the middle, chest out, proudly speaking with one hand on his heart.",
+      "motion_prompt": "Incense smoke drifts, the man speaks proudly with a hand on his heart, neighbours smile, camera slowly tilts up.",
       "seed": 110,
-      "narration": "ደፋር፣ ግልጽና ብልህ ነበር። በኩራት «የገረመው ልጅ ነኝ!» ይል ነበር። አያቴ ገረመው ጀግና ነበር።",
-      "narration_en": "He was courageous, outspoken and clever. He would proudly say, 'I am Geremew's son!' My grandfather Geremew was a warrior.",
-      "subtitle_en": "Brave, outspoken and clever, he would proudly say: \"I am Geremew's son!\" His father Geremew was a warrior.",
-      "render": "kenburns", "kenburns": {"zoom": "out", "pan": "up"}
+      "narration": "ደፋር፣ ግልጽና ብልህ ነበር። ከጎረቤት ጋር ቡና ሲጠጡ በኩራት «እኔ የገረመው ልጅ ነኝ!» ይል ነበር። አባቱ ገረመው ጀግና ተዋጊ ነበር።",
+      "narration_en": "He was courageous, outspoken and clever. At coffee with the neighbours he would proudly say, 'I am Geremew's son!' His father Geremew was a warrior.",
+      "subtitle_en": "Brave, outspoken and clever. At coffee with the neighbours he'd proudly say: \"I am Geremew's son!\" His father Geremew was a warrior.",
+      "render": "kenburns",
+      "kenburns": {
+        "zoom": "in",
+        "pan": "up"
+      }
     },
     {
-      "id": "s11", "beat": "motif returns",
-      "reason": "Closes the circle on the opening image and lands the title: Alemé, my world.",
-      "shot_size": "wide", "characters": ["father", "girl"],
+      "id": "s11",
+      "beat": "motif returns",
+      "reason": "Closes the circle on the opening image and lands the title: Enatenesh, his special name for her.",
+      "shot_size": "wide",
+      "characters": [
+        "father",
+        "girl"
+      ],
       "image_prompt": "Wide shot from behind at sunset, the father walking away along a quiet road with the girl on his shoulders, long warm shadows, golden sky, the town softly in the distance.",
       "motion_prompt": "They walk slowly away from the camera into the sunset, camera static.",
       "seed": 111,
-      "narration": "ሁልጊዜ «ዓለሜ» ብሎ ነበር የሚጠራኝ። እሱን ሳስበው፣ ዓለሜ ያደረጉትን እነዚያን ትናንሽ ጊዜያት አስታውሳለሁ።",
-      "narration_en": "He always called me 'Alemé', my world. And when I think of him, I remember all those little moments that made him my whole world.",
-      "subtitle_en": "He always called me \"Alemé\", my world. And when I think of him, I remember all the little moments that made him my whole world.",
-      "render": "wan", "kenburns": {"zoom": "out", "pan": "none"},
+      "narration": "ከሰጠኝ ስሞች ሁሉ ሁሌም የማስታውሰው አንድ አለ፤ «እናቴነሽ»። ልጅነቴን ልዩ ያደረጉት ትልልቅ ነገሮች ሳይሆኑ ትናንሾቹ ነበሩ፤ ጨዋታችን፣ ሳቃችን፣ አብረን ያሳለፍናቸው ጊዜያት። እነዚያ ጊዜያት ሁሌም ከእኔ ጋር ናቸው።",
+      "narration_en": "Of all the names he called me, one I will always remember: Enatenesh, 'you are my mother'. It wasn't the big moments that made my childhood special, but the little things: our talks, our laughter, the time together. Those moments will always be part of me.",
+      "subtitle_en": "Of all the names he called me, one I'll always remember: Enatenesh, \"you are my mother\". It wasn't the big moments that made my childhood special. It was the little things: our talks, our laughter, our time together. Those moments will always be part of me.",
+      "render": "wan",
+      "kenburns": {
+        "zoom": "out",
+        "pan": "none"
+      },
       "min_duration_s": 8
     }
   ],
@@ -175,22 +292,42 @@
     "keyscale": "A minor",
     "duration_s": 95,
     "instrumental": true,
-    "candidate_seeds": [11, 22, 33],
+    "candidate_seeds": [
+      11,
+      22,
+      33
+    ],
     "chosen": null,
     "chosen_reason": "",
     "music_lufs": -26,
     "cues": [
-      {"at_shot": "s01", "note": "Soft start, krar alone, sets the memory feeling"},
-      {"at_shot": "s03", "note": "Thins out under the fall; the voice carries it"},
-      {"at_shot": "s04", "note": "Warmth returns with piano"},
-      {"at_shot": "s08", "note": "Lightest moment, keep it playful and quiet"},
-      {"at_shot": "s11", "note": "Theme returns with strings and resolves into the end card"}
+      {
+        "at_shot": "s01",
+        "note": "Soft start, krar alone, sets the memory feeling"
+      },
+      {
+        "at_shot": "s03",
+        "note": "Thins out under the fall; the voice carries it"
+      },
+      {
+        "at_shot": "s04",
+        "note": "Warmth returns with piano"
+      },
+      {
+        "at_shot": "s08",
+        "note": "Lightest moment, keep it playful and quiet"
+      },
+      {
+        "at_shot": "s11",
+        "note": "Theme returns with strings and resolves into the end card"
+      }
     ]
   },
   "end_card": {
     "lines": [
-      "Alemé · My World",
+      "Enatenesh · \"You are my mother\"",
       "A story by Tihitna",
+      "In loving memory of my father",
       "Made with AI",
       "Images: FLUX.2 klein · Video: Wan 2.2",
       "Music: ACE-Step 1.5 · Voice: Gemini TTS"
